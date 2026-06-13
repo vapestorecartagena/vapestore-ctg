@@ -1,39 +1,265 @@
-<footer>
-    © 2026 VapeStore CTG - Catálogo Web
-</footer>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VapeStore CTG</title>
 
-<!-- SEGUNDO PRODUCTO -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<div class="contenedor">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
 
-    <div class="producto" style="margin-top:30px;">
+        body{
+            background:#0b1d3a;
+            color:#222;
+        }
 
-        <div class="galeria">
-            <img src="imagenes/bang1.jpg" alt="Bang Leader 32.000 Puffs">
-        </div>
+        header{
+            background:#07152b;
+            color:white;
+            text-align:center;
+            padding:25px 15px;
+            box-shadow:0 4px 15px rgba(0,0,0,.3);
+        }
 
-        <div class="info">
+        header h1{
+            font-size:2.2rem;
+            margin-bottom:5px;
+        }
 
-            <h2>Bang Leader 32.000 Puffs</h2>
+        header p{
+            color:#c8d3e2;
+            font-size:1rem;
+        }
 
-            <div class="precio">Precio: $50.000</div>
+        .contenedor{
+            max-width:900px;
+            margin:30px auto;
+            padding:15px;
+        }
 
-            <p class="descripcion">
-                El Bang Leader 32.000 Puffs es un dispositivo desechable de alta capacidad con sistema de doble sabor y boquilla giratoria.
-            </p>
+        .producto{
+            background:white;
+            border-radius:25px;
+            overflow:hidden;
+            box-shadow:0 10px 30px rgba(0,0,0,.25);
+            max-width:750px;
+            margin:auto;
+        }
 
-            <video controls preload="metadata">
-                <source src="videos/bang.mp4" type="video/mp4">
-            </video>
+        /* Galería */
+        .galeria{
+            display:flex;
+            justify-content:center;
+            gap:15px;
+            padding:20px;
+        }
 
-            <a class="boton"
-               href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Bang%2032.000"
-               target="_blank">
-                Comprar por WhatsApp
-            </a>
+        .galeria img{
+            width:45%;
+            max-width:250px;
+            border-radius:15px;
+            object-fit:cover;
+            box-shadow:0 5px 15px rgba(0,0,0,.15);
+        }
+
+        .info{
+            padding:20px;
+        }
+
+        .info h2{
+            font-size:1.8rem;
+            margin-bottom:15px;
+            text-align:center;
+            color:#111;
+        }
+
+        .precio{
+            color:#0a9b46;
+            font-size:2rem;
+            font-weight:bold;
+            text-align:center;
+            margin-bottom:20px;
+        }
+
+        .descripcion{
+            color:#555;
+            line-height:1.7;
+            text-align:justify;
+            margin-bottom:20px;
+        }
+
+        /* Video */
+        video{
+            display:block;
+            width:70%;
+            max-width:300px;
+            margin:20px auto;
+            border-radius:15px;
+            background:#000;
+            box-shadow:0 5px 15px rgba(0,0,0,.2);
+        }
+
+        /* Botón */
+        .boton{
+            display:block;
+            width:100%;
+            background:#25D366;
+            color:white;
+            text-decoration:none;
+            text-align:center;
+            padding:15px;
+            border-radius:12px;
+            font-size:18px;
+            font-weight:600;
+            transition:0.3s;
+        }
+
+        .boton:hover{
+            opacity:0.9;
+        }
+
+        footer{
+            text-align:center;
+            color:#d5dbe5;
+            padding:25px;
+            margin-top:30px;
+        }
+
+        /* Adaptación para celulares */
+        @media (max-width:700px){
+
+            .contenedor{
+                padding:10px;
+            }
+
+            .galeria{
+                gap:10px;
+            }
+
+            .galeria img{
+                width:45%;
+                max-width:150px;
+            }
+
+            .info h2{
+                font-size:1.4rem;
+            }
+
+            .precio{
+                font-size:1.6rem;
+            }
+
+            video{
+                width:85%;
+                max-width:250px;
+            }
+
+            header h1{
+                font-size:1.8rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>VapeStore CTG</h1>
+        <p>Los mejores vapes y sabores en un solo lugar.</p>
+    </header>
+
+    <div class="contenedor">
+
+        <div class="producto">
+
+            <!-- Galería de imágenes -->
+            <div class="galeria">
+                <img src="imagenes/olit1.jpg" alt="Hookalit 35.000 Puffs">
+                <img src="imagenes/olit2.jpg" alt="Hookalit 35.000 Puffs">
+            </div>
+
+            <div class="info">
+
+                <!-- Nombre del producto -->
+                <h2>Hookalit 35.000 Puffs</h2>
+
+                <!-- Precio -->
+                <div class="precio">Precio: $40.000</div>
+
+                <!-- Descripción -->
+                <p class="descripcion">
+                    El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a la de una hookah. Cuenta con batería recargable, gran capacidad de e-líquido y una excelente duración para disfrutar de sabores intensos.
+                </p>
+
+                <!-- Video -->
+                <video controls preload="metadata">
+                    <source src="videos/olit.mp4" type="video/mp4">
+                    Tu navegador no soporta este video.
+                </video>
+
+                <!-- Botón de WhatsApp -->
+                <a class="boton"
+                   href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Hookalit%2035.000%20Puffs"
+                   target="_blank">
+                    Comprar por WhatsApp
+                </a>
+
+            </div>
 
         </div>
 
     </div>
 
-</div>
+    <footer>
+        
+        © 2026 VapeStore CTG - Catálogo Web
+
+<!-- SEGUNDO PRODUCTO -->
+
+<div class="producto" style="margin-top:30px;">
+
+    <!-- Imagen -->
+    <div class="galeria">
+        <img src="imagenes/bang1.jpg" alt="Bang Leader 32.000 Puffs">
+    </div>
+
+    <div class="info">
+
+        <!-- Nombre -->
+        <h2>Bang Leader 32.000 Puffs</h2>
+
+        <!-- Precio -->
+        <div class="precio">Precio: $50.000</div>
+
+        <!-- Descripción -->
+        <p class="descripcion">
+            El Bang Leader 32.000 Puffs es un dispositivo desechable de alta capacidad que destaca por su innovador sistema de doble sabor. Su boquilla giratoria permite alternar fácilmente entre dos sabores diferentes para una experiencia única y personalizada.
+        </p>
+
+        <!-- Video -->
+        <video controls preload="metadata">
+            <source src="videos/bang.mp4" type="video/mp4">
+            Tu navegador no soporta este video.
+        </video>
+
+        <!-- Botón WhatsApp -->
+        <a class="boton"
+           href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Bang%20Leader%2032.000%20Puffs"
+           target="_blank">
+            Comprar por WhatsApp
+              </a>
+
+          </div>
+
+      </div>
+
+ </div>
+        
+ <footer>
