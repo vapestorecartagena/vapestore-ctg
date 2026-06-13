@@ -16,7 +16,7 @@
         }
 
         body{
-            background:#0b1d3a;
+            background: linear-gradient(135deg, #0b1d3a, #020b18);
             color:#222;
         }
 
@@ -50,10 +50,14 @@
             overflow:hidden;
             box-shadow:0 10px 30px rgba(0,0,0,.25);
             max-width:750px;
-            margin:auto;
+            margin:30px auto;
+            transition:0.3s;
         }
 
-        /* Galería */
+        .producto:hover{
+            transform: scale(1.01);
+        }
+
         .galeria{
             display:flex;
             justify-content:center;
@@ -95,7 +99,6 @@
             margin-bottom:20px;
         }
 
-        /* Video */
         video{
             display:block;
             width:70%;
@@ -106,11 +109,10 @@
             box-shadow:0 5px 15px rgba(0,0,0,.2);
         }
 
-        /* Botón */
         .boton{
             display:block;
             width:100%;
-            background:#25D366;
+            background: linear-gradient(90deg, #25D366, #1ebe57);
             color:white;
             text-decoration:none;
             text-align:center;
@@ -132,17 +134,7 @@
             margin-top:30px;
         }
 
-        /* Adaptación para celulares */
         @media (max-width:700px){
-
-            .contenedor{
-                padding:10px;
-            }
-
-            .galeria{
-                gap:10px;
-            }
-
             .galeria img{
                 width:45%;
                 max-width:150px;
@@ -158,153 +150,88 @@
 
             video{
                 width:85%;
-                max-width:250px;
             }
 
             header h1{
                 font-size:1.8rem;
             }
         }
-
     </style>
 </head>
+
 <body>
 
-    <header>
-        <h1>VapeStore CTG</h1>
-        <p>Los mejores vapes y sabores en un solo lugar.</p>
-    </header>
+<header>
+    <h1>VapeStore CTG</h1>
+    <p>Los mejores vapes y sabores en un solo lugar.</p>
+</header>
 
-    <div class="contenedor">
+<div class="contenedor">
 
-        <div class="producto">
+    <!-- PRODUCTO 1 -->
+    <div class="producto">
 
-            <!-- Galería de imágenes -->
-            <div class="galeria">
-                <img src="imagenes/olit1.jpg" alt="Hookalit 35.000 Puffs">
-                <img src="imagenes/olit2.jpg" alt="Hookalit 35.000 Puffs">
-            </div>
-
-            <div class="info">
-
-                <!-- Nombre del producto -->
-                <h2>Hookalit 35.000 Puffs</h2>
-
-                <!-- Precio -->
-                <div class="precio">Precio: $40.000</div>
-
-                <!-- Descripción -->
-                <p class="descripcion">
-                    El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a la de una hookah. Cuenta con batería recargable, gran capacidad de e-líquido y una excelente duración para disfrutar de sabores intensos.
-                </p>
-
-                <!-- Video -->
-                <video controls preload="metadata">
-                    <source src="videos/olit.mp4" type="video/mp4">
-                    Tu navegador no soporta este video.
-                </video>
-
-                <!-- Botón de WhatsApp -->
-                <a class="boton"
-                   href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Hookalit%2035.000%20Puffs"
-                   target="_blank">
-                    Comprar por WhatsApp
-                </a>
-
-            </div>
-
+        <div class="galeria">
+            <img src="imagenes/olit1.jpg" alt="Hookalit 35.000 Puffs">
+            <img src="imagenes/olit2.jpg" alt="Hookalit 35.000 Puffs">
         </div>
 
+        <div class="info">
+
+            <h2>Hookalit 35.000 Puffs</h2>
+
+            <div class="precio">$40.000</div>
+
+            <p class="descripcion">
+                El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a la de una hookah. Cuenta con batería recargable, gran capacidad de e-líquido y excelente duración para sabores intensos.
+            </p>
+
+            <video controls>
+                <source src="videos/olit.mp4" type="video/mp4">
+            </video>
+
+            <a class="boton" href="https://wa.me/573001234567?text=Hola,%20quiero%20información%20del%20Hookalit%2035.000%20Puffs">
+                Comprar por WhatsApp
+            </a>
+
+        </div>
     </div>
 
-    <footer>
-        
-        © 2026 VapeStore CTG - Catálogo Web
+    <!-- PRODUCTO 2 -->
+    <div class="producto">
 
-<!-- SEGUNDO PRODUCTO -->
+        <div class="galeria">
+            <img src="imagenes/bang1.jpg" alt="Bang Leader 32000">
+            <img src="imagenes/bang2.jpg" alt="Bang Leader 32000">
+        </div>
 
-<div class="producto" style="margin-top:30px;">
+        <div class="info">
 
-    <!-- Imagen -->
-    <div class="galeria">
-        <img src="imagenes/bang1.jpg" alt="Bang Leader 32.000 Puffs">
-    </div>
+            <h2>Bang Leader 32000</h2>
 
-    <div class="info">
+            <div class="precio">$50.000</div>
 
-        <!-- Nombre -->
-        <h2>Bang Leader 32.000 Puffs</h2>
+            <p class="descripcion">
+                El Bang Leader 32000 es un dispositivo desechable de alta capacidad con diseño de doble sabor. 
+                Su boquilla giratoria permite alternar entre dos sabores, ofreciendo una experiencia más intensa y variada en cada uso.
+            </p>
 
-        <!-- Precio -->
-        <div class="precio">Precio: $50.000</div>
+            <video controls>
+                <source src="videos/bang.mp4" type="video/mp4">
+            </video>
 
-        <!-- Descripción -->
-        <p class="descripcion">
-            El Bang Leader 32.000 Puffs es un dispositivo desechable de alta capacidad que destaca por su innovador sistema de doble sabor. Su boquilla giratoria permite alternar fácilmente entre dos sabores diferentes para una experiencia única y personalizada.
-        </p>
+            <a class="boton" href="https://wa.me/573001234567?text=Hola,%20quiero%20información%20del%20Bang%20Leader%2032000">
+                Comprar por WhatsApp
+            </a>
 
-        <!-- Video -->
-        <video controls preload="metadata">
-            <source src="videos/bang.mp4" type="video/mp4">
-            Tu navegador no soporta este video.
-        </video>
-
-        <!-- Botón WhatsApp -->
-        <a class="boton"
-           href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Bang%20Leader%2032.000%20Puffs"
-           target="_blank">
-            Comprar por WhatsApp
-              </a>
-
-          </div>
-
-      </div>
-
- </div>
-        
- <footer>
-               
-        © 2026 VapeStore CTG - Catálogo Web
-
-<!-- tercer producto -->
-        
-<div class="producto">
-
-    <!-- Galería de imágenes -->
-    <div class="galeria">
-        <img src="imagenes/pyne1.jpg" alt="Pyne Pod Boost Pro 20.000">
-        <img src="imagenes/pyne2.jpg" alt="Pyne Pod Boost Pro 20.000">
-    </div>
-
-    <div class="info">
-
-        <!-- Nombre del producto -->
-        <h2>Pyne Pod Boost Pro 20.000</h2>
-
-        <!-- Precio -->
-        <div class="precio">Precio: $35.000</div>
-
-        <!-- Descripción -->
-        <p class="descripcion">
-            El Pyne Pod Boost Pro 20.000 es un dispositivo desechable de alto rendimiento, 
-            con gran autonomía, pantalla inteligente y efectos de luces. 
-            Incluye modo normal y modo turbo para mayor intensidad, ofreciendo una experiencia única.
-        </p>
-
-        <!-- Video -->
-        <video controls preload="metadata">
-            <source src="videos/pynevideo.mp4" type="video/mp4">
-            Tu navegador no soporta este video.
-        </video>
-
-        <!-- Botón de WhatsApp -->
-        <a class="boton"
-           href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Pyne%20Pod%20Boost%20Pro%2020.000"
-           target="_blank">
-            Comprar por WhatsApp
-        </a>
-
+        </div>
     </div>
 
 </div>
 
+<footer>
+    © 2026 VapeStore CTG - Catálogo Web
+</footer>
+
+</body>
+</html>
