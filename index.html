@@ -1,16 +1,13 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>VapeStore CTG</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
 *{
     margin:0;
     padding:0;
@@ -25,42 +22,26 @@ body{
 
 header{
     background:#07152b;
+    color:white;
     text-align:center;
-    padding:15px;
+    padding:20px 15px;
     box-shadow:0 4px 15px rgba(0,0,0,.3);
 }
 
 .logo{
     width:140px;
-    height:auto;
     display:block;
-    margin:0 auto 10px auto;
+    margin:0 auto 10px;
 }
 
-.subtitulo{
+header p{
     color:#c8d3e2;
-    font-size:.9rem;
-    line-height:1.5;
-}
-
-.banner{
-    text-align:center;
-    color:white;
-    padding:25px 15px;
-}
-
-.banner h2{
-    font-size:1.8rem;
-    margin-bottom:10px;
-}
-
-.banner p{
-    color:#d5dbe5;
+    font-size:1rem;
 }
 
 .contenedor{
     max-width:900px;
-    margin:auto;
+    margin:30px auto;
     padding:15px;
 }
 
@@ -69,17 +50,8 @@ header{
     border-radius:25px;
     overflow:hidden;
     box-shadow:0 10px 30px rgba(0,0,0,.25);
-    margin-bottom:30px;
-}
-
-.etiqueta{
-    background:#ff6b00;
-    color:white;
-    display:inline-block;
-    padding:8px 14px;
-    border-radius:10px;
-    font-weight:600;
-    margin-bottom:15px;
+    max-width:750px;
+    margin:0 auto 30px auto;
 }
 
 .galeria{
@@ -102,8 +74,9 @@ header{
 }
 
 .info h2{
-    text-align:center;
+    font-size:1.8rem;
     margin-bottom:15px;
+    text-align:center;
 }
 
 .precio{
@@ -157,6 +130,7 @@ video{
     font-size:30px;
     text-decoration:none;
     z-index:999;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
 }
 
 footer{
@@ -175,6 +149,10 @@ footer{
         max-width:150px;
     }
 
+    .info h2{
+        font-size:1.4rem;
+    }
+
     .precio{
         font-size:1.6rem;
     }
@@ -189,159 +167,134 @@ footer{
 <body>
 
 <header>
-
-<img src="imagenes/logo2.jpg" class="logo" alt="VapeStore CTG">
-
-<p class="subtitulo">
-🚚 Entregas en Cartagena • 💵 Pago contra entrega • ✅ Productos originales
-</p>
-
+    <img src="imagenes/logo2.jpg" class="logo" alt="VapeStore CTG">
+    <p>Los mejores vapes y sabores en un solo lugar.</p>
 </header>
-
-<section class="banner">
-<h2>LOS VAPES MÁS VENDIDOS DE CARTAGENA</h2>
-<p>Catálogo Oficial VapeStore CTG</p>
-</section>
 
 <div class="contenedor">
 
-<!-- HOOKALIT -->
+    <!-- PRODUCTO 1 -->
+    <div class="producto">
+        <div class="galeria">
+            <img src="imagenes/olit1.jpg" alt="Hookalit 35.000 Puffs">
+            <img src="imagenes/olit2.jpg" alt="Hookalit 35.000 Puffs">
+        </div>
 
-<div class="producto">
+        <div class="info">
+            <h2>Hookalit 35.000 Puffs</h2>
 
-<div class="info">
-<div class="etiqueta">🔥 Más vendido</div>
+            <div class="precio">Precio: $40.000</div>
 
-<h2>Hookalit 35.000 Puffs</h2>
+            <p class="descripcion">
+                El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a la de una hookah. Cuenta con batería recargable, gran capacidad de e-líquido y una excelente duración para disfrutar de sabores intensos.
+            </p>
 
-<div class="precio">$40.000</div>
+            <video controls preload="metadata">
+                <source src="videos/olit.mp4" type="video/mp4">
+            </video>
 
-<p class="descripcion">
-Dispositivo desechable de alto rendimiento con gran autonomía y excelente producción de vapor.
-</p>
-</div>
+            <a class="boton"
+               href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Hookalit%2035.000%20Puffs"
+               target="_blank">
+                Comprar por WhatsApp
+            </a>
+        </div>
+    </div>
 
-<div class="galeria">
-<img src="imagenes/olit1.jpg" alt="">
-<img src="imagenes/olit2.jpg" alt="">
-</div>
+    <!-- PRODUCTO 2 -->
+    <div class="producto">
+        <div class="galeria">
+            <img src="imagenes/bang1.jpg" alt="Bang Leader 32.000 Puffs">
+        </div>
 
-<video controls>
-<source src="videos/olit.mp4" type="video/mp4">
-</video>
+        <div class="info">
+            <h2>Bang Leader 32.000 Puffs</h2>
 
-<div class="info">
-<a class="boton" href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Hookalit%2035.000%20Puffs">
-Comprar por WhatsApp
-</a>
-</div>
+            <div class="precio">Precio: $50.000</div>
 
-</div>
+            <p class="descripcion">
+                El Bang Leader 32.000 Puffs es un dispositivo desechable de alta capacidad que destaca por su innovador sistema de doble sabor. Su boquilla giratoria permite alternar fácilmente entre dos sabores diferentes para una experiencia única y personalizada.
+            </p>
 
-<!-- BANG -->
+            <video controls preload="metadata">
+                <source src="videos/bang.mp4" type="video/mp4">
+            </video>
 
-<div class="producto">
+            <a class="boton"
+               href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Bang%20Leader%2032.000%20Puffs"
+               target="_blank">
+                Comprar por WhatsApp
+            </a>
+        </div>
+    </div>
 
-<div class="info">
-<div class="etiqueta">🔥 Más vendido</div>
+    <!-- PRODUCTO 3 -->
+    <div class="producto">
+        <div class="galeria">
+            <img src="imagenes/pyne1.jpg" alt="Pyne Pod 20.000 Puffs">
+            <img src="imagenes/pyne2.jpg" alt="Pyne Pod 20.000 Puffs">
+        </div>
 
-<h2>Bang Leader 32.000 Puffs</h2>
+        <div class="info">
+            <h2>Pyne Pod 20.000 Puffs</h2>
 
-<div class="precio">$50.000</div>
+            <div class="precio">Precio: $35.000</div>
 
-<p class="descripcion">
-Sistema innovador de doble sabor con boquilla giratoria para alternar sabores.
-</p>
-</div>
+            <p class="descripcion">
+                El Pyne Pod 20.000 puffs es un vapeador desechable de alta capacidad que destaca por su pantalla digital y su lluvia de luces. Tiene modo normal y modo turbo de doble potencia. Ofrece un sabor intenso gracias a su tecnología de resistencia de malla.
+            </p>
 
-<div class="galeria">
-<img src="imagenes/bang1.jpg" alt="">
-</div>
+            <video controls preload="metadata">
+                <source src="videos/pynevideo.mp4" type="video/mp4">
+            </video>
 
-<video controls>
-<source src="videos/bang.mp4" type="video/mp4">
-</video>
+            <a class="boton"
+               href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Pyne%20Pod%2020.000%20Puffs"
+               target="_blank">
+                Comprar por WhatsApp
+            </a>
+        </div>
+    </div>
 
-<div class="info">
-<a class="boton" href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Bang%20Leader%2032.000%20Puffs">
-Comprar por WhatsApp
-</a>
-</div>
+    <!-- PRODUCTO 4 -->
+    <div class="producto">
+        <div class="galeria">
+            <img src="imagenes/clase1.jpg" alt="Humo Azul 24.000 Puffs">
+            <img src="imagenes/clase2.jpg" alt="Humo Azul 24.000 Puffs">
+        </div>
 
-</div>
+        <div class="info">
+            <h2>Humo Azul 24.000 Puffs</h2>
 
-<!-- PYNE POD -->
+            <div class="precio">Precio: $45.000</div>
 
-<div class="producto">
+            <p class="descripcion">
+                El vape Humo Azul es un dispositivo desechable de muy alta capacidad que destaca por su diseño exclusivo en forma de botella de tequila. Ofrece una experiencia intensa y duradera con gran producción de vapor.
+            </p>
 
-<div class="info">
-<h2>Pyne Pod 20.000 Puffs</h2>
+            <video controls preload="metadata">
+                <source src="videos/clasevideo.mp4" type="video/mp4">
+            </video>
 
-<div class="precio">$35.000</div>
-
-<p class="descripcion">
-Vape desechable con pantalla digital, modo normal y turbo, gran potencia y excelente sabor.
-</p>
-</div>
-
-<div class="galeria">
-<img src="imagenes/pyne1.jpg" alt="">
-<img src="imagenes/pyne2.jpg" alt="">
-</div>
-
-<video controls>
-<source src="videos/pynevideo.mp4" type="video/mp4">
-</video>
-
-<div class="info">
-<a class="boton" href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Pyne%20Pod%2020.000%20Puffs">
-Comprar por WhatsApp
-</a>
-</div>
-
-</div>
-
-<!-- HUMO AZUL -->
-
-<div class="producto">
-
-<div class="info">
-<h2>Humo Azul 24.000 Puffs</h2>
-
-<div class="precio">$45.000</div>
-
-<p class="descripcion">
-Diseño exclusivo con gran capacidad y excelente producción de vapor para largas sesiones.
-</p>
-</div>
-
-<div class="galeria">
-<img src="imagenes/clase1.jpg" alt="">
-<img src="imagenes/clase2.jpg" alt="">
-</div>
-
-<video controls>
-<source src="videos/clasevideo.mp4" type="video/mp4">
-</video>
-
-<div class="info">
-<a class="boton" href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Humo%20Azul%2024.000%20Puffs">
-Comprar por WhatsApp
-</a>
-</div>
-
-</div>
+            <a class="boton"
+               href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Humo%20Azul%2024.000%20Puffs"
+               target="_blank">
+                Comprar por WhatsApp
+            </a>
+        </div>
+    </div>
 
 </div>
 
 <footer>
-© 2026 VapeStore CTG | Cartagena, Colombia
+    © 2026 VapeStore CTG | Cartagena, Colombia
 </footer>
 
-<a href="https://wa.me/57TU_NUMERO" class="whatsapp-fijo">
-💬
+<a href="https://wa.me/57TU_NUMERO"
+   class="whatsapp-fijo"
+   target="_blank">
+   💬
 </a>
 
 </body>
 </html>
-```
