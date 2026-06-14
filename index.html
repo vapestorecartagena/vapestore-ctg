@@ -8,352 +8,384 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
 }
 
 body{
-    background:#0b1d3a;
-    color:#222;
+background:#0b1d3a;
+color:white;
 }
 
 header{
-    background:#07152b;
-    color:white;
-    text-align:center;
-    padding:20px 15px;
-    box-shadow:0 4px 15px rgba(0,0,0,.3);
+background:#07152b;
+padding:20px;
+text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,.3);
 }
 
 .logo{
-    width:140px;
-    display:block;
-    margin:0 auto 10px;
+width:140px;
+margin-bottom:10px;
 }
 
 header p{
-    color:#c8d3e2;
-    font-size:1rem;
+color:#c8d3e2;
 }
 
-.contenedor{
-    max-width:900px;
-    margin:30px auto;
-    padding:15px;
+.catalogo{
+max-width:1100px;
+margin:auto;
+padding:20px;
 }
 
-.producto{
-    background:white;
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
-    max-width:750px;
-    margin:0 auto 30px auto;
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
 }
 
-.galeria{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    padding:20px;
+.card{
+background:white;
+color:#222;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+transition:.3s;
 }
 
-.galeria img{
-    width:45%;
-    max-width:250px;
-    border-radius:15px;
-    object-fit:cover;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:260px;
+object-fit:cover;
 }
 
 .info{
-    padding:20px;
+padding:20px;
 }
 
 .info h2{
-    font-size:1.8rem;
-    margin-bottom:15px;
-    text-align:center;
+text-align:center;
+margin-bottom:10px;
 }
 
 .precio{
-    color:#0a9b46;
-    font-size:2rem;
-    font-weight:bold;
-    text-align:center;
-    margin-bottom:20px;
+text-align:center;
+font-size:1.8rem;
+font-weight:bold;
+color:#0a9b46;
+margin-bottom:15px;
 }
 
 .descripcion{
-    color:#555;
-    line-height:1.7;
-    text-align:justify;
-    margin-bottom:20px;
+text-align:center;
+color:#555;
+margin-bottom:15px;
+}
+
+.ver-producto{
+display:block;
+background:#25D366;
+color:white;
+text-decoration:none;
+padding:14px;
+text-align:center;
+border-radius:12px;
+font-weight:600;
+cursor:pointer;
+}
+
+.detalle{
+display:none;
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.producto{
+background:white;
+color:#222;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.galeria{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+padding:20px;
+}
+
+.galeria img{
+width:45%;
+max-width:300px;
+border-radius:15px;
+}
+
+.producto-info{
+padding:20px;
+}
+
+.producto-info h1{
+text-align:center;
+margin-bottom:15px;
+}
+
+.producto-precio{
+text-align:center;
+font-size:2rem;
+font-weight:bold;
+color:#0a9b46;
+margin-bottom:20px;
+}
+
+.producto-descripcion{
+line-height:1.8;
+margin-bottom:20px;
 }
 
 video{
-    display:block;
-    width:70%;
-    max-width:300px;
-    margin:20px auto;
-    border-radius:15px;
-    background:#000;
+display:block;
+width:95%;
+max-width:500px;
+margin:20px auto;
+border-radius:15px;
 }
 
-.boton{
-    display:block;
-    width:100%;
-    background:#25D366;
-    color:white;
-    text-decoration:none;
-    text-align:center;
-    padding:15px;
-    border-radius:12px;
-    font-size:18px;
-    font-weight:600;
+.comprar{
+display:block;
+background:#25D366;
+color:white;
+text-decoration:none;
+padding:15px;
+text-align:center;
+border-radius:12px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.volver{
+display:block;
+background:#07152b;
+color:white;
+text-decoration:none;
+padding:15px;
+text-align:center;
+border-radius:12px;
+cursor:pointer;
 }
 
 .whatsapp-fijo{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:60px;
-    height:60px;
-    background:#25D366;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
+position:fixed;
+right:20px;
+bottom:20px;
+width:60px;
+height:60px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:pulsar 1.8s infinite;
 }
 
 .instagram-fijo{
-    position:fixed;
-    right:20px;
-    bottom:90px;
-    width:60px;
-    height:60px;
-    background:#E1306C;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.3);
+position:fixed;
+right:20px;
+bottom:90px;
+width:60px;
+height:60px;
+background:#E1306C;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:pulsar 1.8s infinite;
 }
 
 .whatsapp-fijo img,
 .instagram-fijo img{
-    width:35px;
-    height:35px;
-    object-fit:contain;
-}
-
-.whatsapp-fijo,
-.instagram-fijo{
-    animation:pulsar 1.8s infinite;
-    transition:0.3s;
-}
-
-.whatsapp-fijo:hover,
-.instagram-fijo:hover{
-    transform:scale(1.12);
+width:35px;
+height:35px;
 }
 
 @keyframes pulsar{
-    0%{
-        transform:scale(1);
-        box-shadow:0 0 0 0 rgba(255,255,255,.5);
-    }
-
-    70%{
-        transform:scale(1.1);
-        box-shadow:0 0 0 15px rgba(255,255,255,0);
-    }
-
-    100%{
-        transform:scale(1);
-        box-shadow:0 0 0 0 rgba(255,255,255,0);
-    }
+0%{transform:scale(1);}
+50%{transform:scale(1.12);}
+100%{transform:scale(1);}
 }
-  
+
 footer{
-    text-align:center;
-    color:#d5dbe5;
-    padding:25px;
+text-align:center;
+padding:25px;
+color:#c8d3e2;
 }
 
-@media(max-width:700px){
-
-    .logo{
-        width:120px;
-    }
-
-    .galeria img{
-        max-width:150px;
-    }
-
-    .info h2{
-        font-size:1.4rem;
-    }
-
-    .precio{
-        font-size:1.6rem;
-    }
-
-    video{
-        width:85%;
-    }
-}
 </style>
 </head>
 
 <body>
 
 <header>
-    <img src="imagenes/logo2.jpg" class="logo" alt="VapeStore CTG">
-    <p>Los mejores vapes y sabores en un solo lugar.</p>
+<img src="imagenes/logo2.jpg" class="logo">
+
+<p>Los mejores vapes y sabores en un solo lugar.</p>
 <p>🚚 Entregas en Cartagena</p>
 <p>💵 Pago contra entrega</p>
 <p>✅ Productos originales</p>
 </header>
 
-<div class="contenedor">
+<div id="catalogo" class="catalogo">
 
-    <!-- PRODUCTO 1 -->
-    <div class="producto">
-        <div class="galeria">
-            <img src="imagenes/olit1.jpg" alt="Hookalit 35.000 Puffs">
-            <img src="imagenes/olit2.jpg" alt="Hookalit 35.000 Puffs">
-        </div>
+<div class="grid">
 
-        <div class="info">
-            <h2>Hookalit 35.000 Puffs</h2>
-
-            <div class="precio">Precio: $40.000</div>
-
-            <p class="descripcion">
-                El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a la de una hookah. Cuenta con batería recargable, gran capacidad de e-líquido y una excelente duración para disfrutar de sabores intensos.
-            </p>
-
-            <video controls preload="metadata">
-                <source src="videos/olit.mp4" type="video/mp4">
-            </video>
-
-            <a class="boton"
-               href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Hookalit%2035.000%20Puffs"
-               target="_blank">
-                Comprar por WhatsApp
-            </a>
-        </div>
-    </div>
-
-    <!-- PRODUCTO 2 -->
-    <div class="producto">
-        <div class="galeria">
-            <img src="imagenes/bang1.jpg" alt="Bang Leader 32.000 Puffs">
-        </div>
-
-        <div class="info">
-            <h2>Bang Leader 32.000 Puffs</h2>
-
-            <div class="precio">Precio: $50.000</div>
-
-            <p class="descripcion">
-                El Bang Leader 32.000 Puffs es un dispositivo desechable de alta capacidad que destaca por su innovador sistema de doble sabor. Su boquilla giratoria permite alternar fácilmente entre dos sabores diferentes para una experiencia única y personalizada.
-            </p>
-
-            <video controls preload="metadata">
-                <source src="videos/bang.mp4" type="video/mp4">
-            </video>
-
-            <a class="boton"
-               href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Bang%20Leader%2032.000%20Puffs"
-               target="_blank">
-                Comprar por WhatsApp
-            </a>
-        </div>
-    </div>
-
-    <!-- PRODUCTO 3 -->
-    <div class="producto">
-        <div class="galeria">
-            <img src="imagenes/pyne1.jpg" alt="Pyne Pod 20.000 Puffs">
-            <img src="imagenes/pyne2.jpg" alt="Pyne Pod 20.000 Puffs">
-        </div>
-
-        <div class="info">
-            <h2>Pyne Pod 20.000 Puffs</h2>
-
-            <div class="precio">Precio: $35.000</div>
-
-            <p class="descripcion">
-                El Pyne Pod 20.000 puffs es un vapeador desechable de alta capacidad que destaca por su pantalla digital y su lluvia de luces. Tiene modo normal y modo turbo de doble potencia. Ofrece un sabor intenso gracias a su tecnología de resistencia de malla.
-            </p>
-
-            <video controls preload="metadata">
-                <source src="videos/pynevideo.mp4" type="video/mp4">
-            </video>
-
-            <a class="boton"
-               href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Pyne%20Pod%2020.000%20Puffs"
-               target="_blank">
-                Comprar por WhatsApp
-            </a>
-        </div>
-    </div>
-
-    <!-- PRODUCTO 4 -->
-    <div class="producto">
-        <div class="galeria">
-            <img src="imagenes/clase1.jpg" alt="Humo Azul 24.000 Puffs">
-            <img src="imagenes/clase2.jpg" alt="Humo Azul 24.000 Puffs">
-        </div>
-
-        <div class="info">
-            <h2>Humo Azul 24.000 Puffs</h2>
-
-            <div class="precio">Precio: $45.000</div>
-
-            <p class="descripcion">
-                El vape Humo Azul es un dispositivo desechable de muy alta capacidad que destaca por su diseño exclusivo en forma de botella de tequila. Ofrece una experiencia intensa y duradera con gran producción de vapor.
-            </p>
-
-            <video controls preload="metadata">
-                <source src="videos/clasevideo.mp4" type="video/mp4">
-            </video>
-
-            <a class="boton"
-               href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Humo%20Azul%2024.000%20Puffs"
-               target="_blank">
-                Comprar por WhatsApp
-            </a>
-        </div>
-    </div>
-
+<div class="card">
+<img src="imagenes/olit1.jpg">
+<div class="info">
+<h2>Hookalit 35.000 Puffs</h2>
+<div class="precio">$40.000</div>
+<div class="descripcion">
+Hookah desechable de alto rendimiento.
+</div>
+<a class="ver-producto" onclick="mostrar('hookalit')">
+Ver producto
+</a>
+</div>
 </div>
 
-<footer>
-    © 2026 VapeStore CTG | Cartagena, Colombia
-</footer>
+<div class="card">
+<img src="imagenes/bang1.jpg">
+<div class="info">
+<h2>Bang Leader 32.000 Puffs</h2>
+<div class="precio">$50.000</div>
+<div class="descripcion">
+Sistema innovador de doble sabor.
+</div>
+<a class="ver-producto" onclick="mostrar('bang')">
+Ver producto
+</a>
+</div>
+</div>
 
-<a href="https://www.instagram.com/vapestore_ctg?igsh=amtkYW14anduNmN1&utm_source=qr"
-   class="instagram-fijo"
-   target="_blank">
-   <img src="imagenes/logoinsta.jpg" alt="Instagram">
+<div class="card">
+<img src="imagenes/pyne1.jpg">
+<div class="info">
+<h2>Pyne Pod 20.000 Puffs</h2>
+<div class="precio">$35.000</div>
+<div class="descripcion">
+Pantalla digital y modo turbo.
+</div>
+<a class="ver-producto" onclick="mostrar('pyne')">
+Ver producto
+</a>
+</div>
+</div>
+
+<div class="card">
+<img src="imagenes/clase1.jpg">
+<div class="info">
+<h2>Humo Azul 24.000 Puffs</h2>
+<div class="precio">$45.000</div>
+<div class="descripcion">
+Diseño exclusivo tipo botella.
+</div>
+<a class="ver-producto" onclick="mostrar('humo')">
+Ver producto
+</a>
+</div>
+</div>
+
+</div>
+</div>
+<!-- HOOKALIT -->
+
+<div id="hookalit" class="detalle">
+
+<div class="producto">
+
+<div class="galeria">
+<img src="imagenes/olit1.jpg">
+<img src="imagenes/olit2.jpg">
+</div>
+
+<div class="producto-info">
+
+<h1>Hookalit 35.000 Puffs</h1>
+
+<div class="producto-precio">
+$40.000
+</div>
+
+<p class="producto-descripcion">
+El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a la de una hookah. Cuenta con batería recargable, gran capacidad de e-líquido y excelente duración para disfrutar sabores intensos.
+</p>
+
+<video controls preload="metadata">
+<source src="videos/olit.mp4" type="video/mp4">
+</video>
+
+<a class="comprar"
+href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Hookalit%2035.000%20Puffs"
+target="_blank">
+Comprar por WhatsApp
 </a>
 
-<a href="https://wa.me/57TU_NUMERO"
-   class="whatsapp-fijo"
-   target="_blank">
-   <img src="imagenes/logowhat.jpg" alt="WhatsApp">
+<a class="volver" onclick="volverCatalogo()">
+Volver al catálogo
 </a>
 
-</body>
-</html>
+</div>
+</div>
+</div>
+
+<!-- BANG -->
+
+<div id="bang" class="detalle">
+
+<div class="producto">
+
+<div class="galeria">
+<img src="imagenes/bang1.jpg">
+</div>
+
+<div class="producto-info">
+
+<h1>Bang Leader 32.000 Puffs</h1>
+
+<div class="producto-precio">
+$50.000
+</div>
+
+<p class="producto-descripcion">
+El Bang Leader 32.000 Puffs es un dispositivo desechable de alta capacidad que destaca por su innovador sistema de doble sabor. Su boquilla giratoria permite alternar fácilmente entre dos sabores diferentes para una experiencia única y personalizada.
+</p>
+
+<video controls preload="metadata">
+<source src="videos/bang.mp4" type="video/mp4">
+</video>
+
+<a class="comprar"
+href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Bang%20Leader%2032.000%20Puffs"
+target="_blank">
+Comprar por WhatsApp
+</a>
+
+<a class="volver" onclick="volverCatalogo()">
+Volver al catálogo
+</a>
+
+</div>
+</div>
+</div>
