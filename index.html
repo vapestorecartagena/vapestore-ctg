@@ -20,7 +20,12 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#0b1d3a;
+background:linear-gradient(
+180deg,
+#07152b 0%,
+#0b1d3a 50%,
+#05101f 100%
+);
 color:white;
 }
 
@@ -32,7 +37,7 @@ box-shadow:0 4px 15px rgba(0,0,0,.3);
 }
 
 .logo{
-width:140px;
+width:180px;
 margin-bottom:10px;
 }
 
@@ -42,7 +47,7 @@ color:#c8d3e2;
 
 .categoria{
 text-align:center;
-padding:25px 15px;
+padding:30px 15px;
 }
 
 .categoria h1{
@@ -51,13 +56,13 @@ margin-bottom:10px;
 }
 
 .categoria p{
-color:#c8d3e2;
+color:#d8e2f0;
 }
 
 .catalogo{
 max-width:1100px;
 margin:auto;
-padding:20px;
+padding:15px;
 }
 
 .grid{
@@ -69,14 +74,9 @@ gap:12px;
 .card{
 background:white;
 color:#222;
-border-radius:25px;
+border-radius:20px;
 overflow:hidden;
 box-shadow:0 10px 30px rgba(0,0,0,.25);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
 }
 
 .card img{
@@ -86,7 +86,7 @@ object-fit:cover;
 }
 
 .info{
-padding:15px;
+padding:12px;
 }
 
 .info h2{
@@ -100,7 +100,7 @@ text-align:center;
 font-size:1.4rem;
 font-weight:bold;
 color:#0a9b46;
-margin-bottom:15px;
+margin-bottom:10px;
 }
 
 .ver-producto{
@@ -110,7 +110,7 @@ color:white;
 text-decoration:none;
 padding:12px;
 text-align:center;
-border-radius:12px;
+border-radius:10px;
 font-weight:600;
 cursor:pointer;
 }
@@ -148,11 +148,6 @@ border-radius:15px;
 padding:20px;
 }
 
-.producto-info h1{
-text-align:center;
-margin-bottom:15px;
-}
-
 .producto-precio{
 font-size:2rem;
 font-weight:bold;
@@ -161,10 +156,6 @@ text-align:center;
 margin-bottom:15px;
 }
 
-.producto-info p{
-line-height:1.8;
-margin-bottom:20px;
-}
 video{
 display:block;
 width:95%;
@@ -195,7 +186,6 @@ text-align:center;
 border-radius:12px;
 cursor:pointer;
 }
-
 .whatsapp-fijo{
 position:fixed;
 right:15px;
@@ -223,17 +213,10 @@ display:flex;
 justify-content:center;
 align-items:center;
 z-index:9999;
-box-shadow:0 0 20px rgba(225,48,108,.7);
 animation:flotar 2s infinite;
 }
 
-.whatsapp-fijo img{
-width:100%;
-height:100%;
-object-fit:cover;
-border-radius:50%;
-}
-
+.whatsapp-fijo img,
 .instagram-fijo img{
 width:100%;
 height:100%;
@@ -261,7 +244,7 @@ color:#c8d3e2;
 
 <header>
 
-<img src="imagenes/logo2.jpg" class="logo" alt="VapeStore CTG">
+<img src="imagenes/logo2.jpg" class="logo">
 
 <p>Los mejores vapes y sabores en un solo lugar.</p>
 <p>🚚 Entregas en Cartagena</p>
@@ -272,7 +255,7 @@ color:#c8d3e2;
 
 <div class="categoria">
 
-<h1>VAPES CON NICOTINA</h1>
+<h1>🔥 VAPES CON NICOTINA</h1>
 
 <p>
 Selecciona un producto para ver fotos, videos y comprar.
@@ -284,89 +267,60 @@ Selecciona un producto para ver fotos, videos y comprar.
 
 <div class="grid">
 
-<!-- PRODUCTO 1 -->
-
 <div class="card">
-
-<img src="imagenes/olit1.jpg" alt="Hookalit">
+<img src="imagenes/olit1.jpg">
 
 <div class="info">
-
 <h2>Hookalit 35.000 Puffs</h2>
-
 <div class="precio">$40.000</div>
 
 <a class="ver-producto" onclick="mostrar('hookalit')">
 Ver producto
 </a>
-
 </div>
-
 </div>
-
-<!-- PRODUCTO 2 -->
 
 <div class="card">
-
-<img src="imagenes/bang1.jpg" alt="Bang Leader">
+<img src="imagenes/bang1.jpg">
 
 <div class="info">
-
 <h2>Bang Leader 32.000 Puffs</h2>
-
 <div class="precio">$50.000</div>
 
 <a class="ver-producto" onclick="mostrar('bang')">
 Ver producto
 </a>
-
 </div>
-
 </div>
-<!-- PRODUCTO 3 -->
 
 <div class="card">
-
-<img src="imagenes/pyne1.jpg" alt="Pyne Pod">
+<img src="imagenes/pyne1.jpg">
 
 <div class="info">
-
 <h2>Pyne Pod 20.000 Puffs</h2>
-
 <div class="precio">$35.000</div>
 
 <a class="ver-producto" onclick="mostrar('pyne')">
 Ver producto
 </a>
-
 </div>
-
 </div>
-
-<!-- PRODUCTO 4 -->
 
 <div class="card">
-
-<img src="imagenes/clase1.jpg" alt="Humo Azul">
+<img src="imagenes/clase1.jpg">
 
 <div class="info">
-
 <h2>Humo Azul 24.000 Puffs</h2>
-
 <div class="precio">$45.000</div>
 
 <a class="ver-producto" onclick="mostrar('humo')">
 Ver producto
 </a>
-
+</div>
 </div>
 
 </div>
-
 </div>
-
-</div>
-
 <!-- HOOKALIT -->
 
 <div id="hookalit" class="detalle">
@@ -382,10 +336,12 @@ Ver producto
 
 <h1>Hookalit 35.000 Puffs</h1>
 
-<div class="producto-precio">$40.000</div>
+<div class="producto-precio">
+$40.000
+</div>
 
 <p>
-El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a la de una hookah.
+El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a una hookah. Cuenta con batería recargable y gran duración.
 </p>
 
 <video controls>
@@ -393,7 +349,8 @@ El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñ
 </video>
 
 <a class="comprar"
-href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Hookalit%2035.000%20Puffs">
+href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Hookalit%2035.000%20Puffs"
+target="_blank">
 Comprar por WhatsApp
 </a>
 
@@ -402,9 +359,7 @@ Volver al catálogo
 </a>
 
 </div>
-
 </div>
-
 </div>
 
 <!-- BANG -->
@@ -415,16 +370,19 @@ Volver al catálogo
 
 <div class="galeria">
 <img src="imagenes/bang1.jpg">
+<img src="imagenes/bang2.jpg">
 </div>
 
 <div class="producto-info">
 
 <h1>Bang Leader 32.000 Puffs</h1>
 
-<div class="producto-precio">$50.000</div>
+<div class="producto-precio">
+$50.000
+</div>
 
 <p>
-Sistema innovador de doble sabor con boquilla giratoria para alternar entre sabores.
+Sistema innovador de doble sabor con boquilla giratoria para alternar entre sabores de forma rápida y cómoda.
 </p>
 
 <video controls>
@@ -432,7 +390,8 @@ Sistema innovador de doble sabor con boquilla giratoria para alternar entre sabo
 </video>
 
 <a class="comprar"
-href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Bang%20Leader%2032.000%20Puffs">
+href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Bang%20Leader%2032.000%20Puffs"
+target="_blank">
 Comprar por WhatsApp
 </a>
 
@@ -441,9 +400,7 @@ Volver al catálogo
 </a>
 
 </div>
-
 </div>
-
 </div>
 <!-- PYNE -->
 
@@ -460,10 +417,12 @@ Volver al catálogo
 
 <h1>Pyne Pod 20.000 Puffs</h1>
 
-<div class="producto-precio">$35.000</div>
+<div class="producto-precio">
+$35.000
+</div>
 
 <p>
-Pantalla digital, lluvia de luces y modo turbo de doble potencia.
+Pantalla digital, lluvia de luces y modo turbo de doble potencia para una experiencia más intensa.
 </p>
 
 <video controls>
@@ -471,7 +430,8 @@ Pantalla digital, lluvia de luces y modo turbo de doble potencia.
 </video>
 
 <a class="comprar"
-href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Pyne%20Pod%2020.000%20Puffs">
+href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Pyne%20Pod%2020.000%20Puffs"
+target="_blank">
 Comprar por WhatsApp
 </a>
 
@@ -480,9 +440,7 @@ Volver al catálogo
 </a>
 
 </div>
-
 </div>
-
 </div>
 
 <!-- HUMO AZUL -->
@@ -500,7 +458,9 @@ Volver al catálogo
 
 <h1>Humo Azul 24.000 Puffs</h1>
 
-<div class="producto-precio">$45.000</div>
+<div class="producto-precio">
+$45.000
+</div>
 
 <p>
 Diseño exclusivo tipo botella con gran capacidad y excelente producción de vapor.
@@ -511,7 +471,8 @@ Diseño exclusivo tipo botella con gran capacidad y excelente producción de vap
 </video>
 
 <a class="comprar"
-href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Humo%20Azul%2024.000%20Puffs">
+href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Humo%20Azul%2024.000%20Puffs"
+target="_blank">
 Comprar por WhatsApp
 </a>
 
@@ -520,9 +481,7 @@ Volver al catálogo
 </a>
 
 </div>
-
 </div>
-
 </div>
 
 <script>
@@ -569,16 +528,20 @@ behavior:"smooth"
 © 2026 VapeStore CTG | Cartagena, Colombia
 </footer>
 
-<a href="https://www.instagram.com/vapestore_ctg?igsh=amtkYW14anduNmN1&utm_source=qr"
+<a href="https://www.instagram.com/vapestore_ctg"
 class="instagram-fijo"
 target="_blank">
+
 <img src="imagenes/logoinsta.jpg" alt="Instagram">
+
 </a>
 
 <a href="https://wa.me/57TU_NUMERO"
 class="whatsapp-fijo"
 target="_blank">
+
 <img src="imagenes/logowhat.jpg" alt="WhatsApp">
+
 </a>
 
 </body>
