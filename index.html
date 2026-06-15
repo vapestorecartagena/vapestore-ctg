@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>VapeStore CTG</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -25,11 +26,16 @@ header{
 background:#07152b;
 padding:20px;
 text-align:center;
+box-shadow:0 4px 15px rgba(0,0,0,.3);
 }
 
 .logo{
 width:140px;
 margin-bottom:10px;
+}
+
+header p{
+color:#c8d3e2;
 }
 
 .catalogo{
@@ -47,35 +53,43 @@ gap:20px;
 .card{
 background:white;
 color:#222;
-border-radius:20px;
+border-radius:25px;
 overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
 .card img{
 width:100%;
-height:250px;
+height:260px;
 object-fit:cover;
 }
 
 .info{
-padding:15px;
+padding:20px;
+}
+
+.info h2{
+text-align:center;
+margin-bottom:10px;
 }
 
 .precio{
-color:#0a9b46;
+text-align:center;
+font-size:1.8rem;
 font-weight:bold;
-font-size:1.6rem;
-margin:10px 0;
+color:#0a9b46;
+margin-bottom:15px;
 }
 
-.btn{
+.ver-producto{
 display:block;
 background:#25D366;
 color:white;
 text-decoration:none;
-padding:12px;
-border-radius:10px;
+padding:14px;
 text-align:center;
+border-radius:12px;
+font-weight:600;
 cursor:pointer;
 }
 
@@ -89,15 +103,17 @@ padding:20px;
 .producto{
 background:white;
 color:#222;
-border-radius:20px;
-padding:20px;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
 .galeria{
 display:flex;
-gap:15px;
-justify-content:center;
 flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+padding:20px;
 }
 
 .galeria img{
@@ -106,105 +122,198 @@ max-width:300px;
 border-radius:15px;
 }
 
+.producto-info{
+padding:20px;
+}
+
+.producto-precio{
+font-size:2rem;
+font-weight:bold;
+color:#0a9b46;
+text-align:center;
+margin-bottom:15px;
+}
+
 video{
-width:100%;
-max-width:500px;
 display:block;
+width:95%;
+max-width:500px;
 margin:20px auto;
 border-radius:15px;
 }
 
+.comprar{
+display:block;
+background:#25D366;
+color:white;
+text-decoration:none;
+padding:15px;
+text-align:center;
+border-radius:12px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
 .volver{
+display:block;
 background:#07152b;
-margin-top:10px;
+color:white;
+text-decoration:none;
+padding:15px;
+text-align:center;
+border-radius:12px;
+cursor:pointer;
+}
+
+.whatsapp-fijo{
+position:fixed;
+right:15px;
+bottom:20px;
+width:55px;
+height:55px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:flotar 2s infinite;
+}
+
+.instagram-fijo{
+position:fixed;
+right:15px;
+bottom:90px;
+width:55px;
+height:55px;
+background:#E1306C;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:flotar 2s infinite;
+}
+
+.whatsapp-fijo img,
+.instagram-fijo img{
+width:30px;
+height:30px;
+}
+
+@keyframes flotar{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+}
+
+footer{
+text-align:center;
+padding:25px;
+color:#c8d3e2;
 }
 
 </style>
 </head>
+
 <body>
 
 <header>
+
 <img src="imagenes/logo2.jpg" class="logo">
 
 <p>Los mejores vapes y sabores en un solo lugar.</p>
 <p>🚚 Entregas en Cartagena</p>
 <p>💵 Pago contra entrega</p>
 <p>✅ Productos originales</p>
+
 </header>
 
 <div id="catalogo" class="catalogo">
 
 <div class="grid">
+<!-- TARJETA 1 -->
 
-<!-- HOOKALIT -->
 <div class="card">
-<img src="imagenes/olit1.jpg">
+
+<img src="imagenes/olit1.jpg" alt="Hookalit">
 
 <div class="info">
+
 <h2>Hookalit 35.000 Puffs</h2>
 
-<div class="precio">
-$40.000
-</div>
+<div class="precio">$40.000</div>
 
-<a class="btn" onclick="mostrar('hookalit')">
+<a class="ver-producto" onclick="mostrar('hookalit')">
 Ver producto
 </a>
-</div>
+
 </div>
 
-<!-- BANG -->
+</div>
+
+<!-- TARJETA 2 -->
+
 <div class="card">
-<img src="imagenes/bang1.jpg">
+
+<img src="imagenes/bang1.jpg" alt="Bang Leader">
 
 <div class="info">
+
 <h2>Bang Leader 32.000 Puffs</h2>
 
-<div class="precio">
-$50.000
-</div>
+<div class="precio">$50.000</div>
 
-<a class="btn" onclick="mostrar('bang')">
+<a class="ver-producto" onclick="mostrar('bang')">
 Ver producto
 </a>
-</div>
+
 </div>
 
-<!-- PYNE -->
+</div>
+
+<!-- TARJETA 3 -->
+
 <div class="card">
-<img src="imagenes/pyne1.jpg">
+
+<img src="imagenes/pyne1.jpg" alt="Pyne Pod">
 
 <div class="info">
+
 <h2>Pyne Pod 20.000 Puffs</h2>
 
-<div class="precio">
-$35.000
-</div>
+<div class="precio">$35.000</div>
 
-<a class="btn" onclick="mostrar('pyne')">
+<a class="ver-producto" onclick="mostrar('pyne')">
 Ver producto
 </a>
-</div>
+
 </div>
 
-<!-- HUMO AZUL -->
+</div>
+
+<!-- TARJETA 4 -->
+
 <div class="card">
-<img src="imagenes/clase1.jpg">
+
+<img src="imagenes/clase1.jpg" alt="Humo Azul">
 
 <div class="info">
+
 <h2>Humo Azul 24.000 Puffs</h2>
 
-<div class="precio">
-$45.000
-</div>
+<div class="precio">$45.000</div>
 
-<a class="btn" onclick="mostrar('humo')">
+<a class="ver-producto" onclick="mostrar('humo')">
 Ver producto
 </a>
-</div>
+
 </div>
 
 </div>
+
+</div>
+
 </div>
 <!-- HOOKALIT -->
 
@@ -217,28 +326,35 @@ Ver producto
 <img src="imagenes/olit2.jpg">
 </div>
 
+<div class="producto-info">
+
 <h1>Hookalit 35.000 Puffs</h1>
 
-<h2>$40.000</h2>
+<div class="producto-precio">
+$40.000
+</div>
 
 <p>
-El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a la de una hookah.
+El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a la de una hookah. Cuenta con batería recargable y excelente duración.
 </p>
 
 <video controls>
 <source src="videos/olit.mp4" type="video/mp4">
 </video>
 
-<a class="btn"
+<a class="comprar"
 href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Hookalit%2035.000%20Puffs">
 Comprar por WhatsApp
 </a>
 
-<a class="btn volver" onclick="volverCatalogo()">
+<a class="volver" onclick="volverCatalogo()">
 Volver al catálogo
 </a>
 
 </div>
+
+</div>
+
 </div>
 
 <!-- BANG -->
@@ -251,30 +367,36 @@ Volver al catálogo
 <img src="imagenes/bang1.jpg">
 </div>
 
+<div class="producto-info">
+
 <h1>Bang Leader 32.000 Puffs</h1>
 
-<h2>$50.000</h2>
+<div class="producto-precio">
+$50.000
+</div>
 
 <p>
-Sistema innovador de doble sabor con boquilla giratoria para cambiar entre sabores.
+Sistema innovador de doble sabor con boquilla giratoria para alternar entre sabores de forma rápida y cómoda.
 </p>
 
 <video controls>
 <source src="videos/bang.mp4" type="video/mp4">
 </video>
 
-<a class="btn"
+<a class="comprar"
 href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Bang%20Leader%2032.000%20Puffs">
 Comprar por WhatsApp
 </a>
 
-<a class="btn volver" onclick="volverCatalogo()">
+<a class="volver" onclick="volverCatalogo()">
 Volver al catálogo
 </a>
 
 </div>
+
 </div>
 
+</div>
 <!-- PYNE -->
 
 <div id="pyne" class="detalle">
@@ -286,9 +408,11 @@ Volver al catálogo
 <img src="imagenes/pyne2.jpg">
 </div>
 
+<div class="producto-info">
+
 <h1>Pyne Pod 20.000 Puffs</h1>
 
-<h2>$35.000</h2>
+<div class="producto-precio">$35.000</div>
 
 <p>
 Pantalla digital, lluvia de luces y modo turbo de doble potencia.
@@ -298,15 +422,16 @@ Pantalla digital, lluvia de luces y modo turbo de doble potencia.
 <source src="videos/pynevideo.mp4" type="video/mp4">
 </video>
 
-<a class="btn"
+<a class="comprar"
 href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Pyne%20Pod%2020.000%20Puffs">
 Comprar por WhatsApp
 </a>
 
-<a class="btn volver" onclick="volverCatalogo()">
+<a class="volver" onclick="volverCatalogo()">
 Volver al catálogo
 </a>
 
+</div>
 </div>
 </div>
 
@@ -321,9 +446,11 @@ Volver al catálogo
 <img src="imagenes/clase2.jpg">
 </div>
 
+<div class="producto-info">
+
 <h1>Humo Azul 24.000 Puffs</h1>
 
-<h2>$45.000</h2>
+<div class="producto-precio">$45.000</div>
 
 <p>
 Diseño exclusivo tipo botella con gran capacidad y excelente producción de vapor.
@@ -333,17 +460,19 @@ Diseño exclusivo tipo botella con gran capacidad y excelente producción de vap
 <source src="videos/clasevideo.mp4" type="video/mp4">
 </video>
 
-<a class="btn"
+<a class="comprar"
 href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Humo%20Azul%2024.000%20Puffs">
 Comprar por WhatsApp
 </a>
 
-<a class="btn volver" onclick="volverCatalogo()">
+<a class="volver" onclick="volverCatalogo()">
 Volver al catálogo
 </a>
 
 </div>
 </div>
+</div>
+
 <script>
 
 function mostrar(id){
