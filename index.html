@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -38,6 +40,20 @@ header p{
 color:#c8d3e2;
 }
 
+.categoria{
+text-align:center;
+padding:25px 15px;
+}
+
+.categoria h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.categoria p{
+color:#c8d3e2;
+}
+
 .catalogo{
 max-width:1100px;
 margin:auto;
@@ -46,8 +62,8 @@ padding:20px;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
+grid-template-columns:repeat(2,1fr);
+gap:12px;
 }
 
 .card{
@@ -56,26 +72,32 @@ color:#222;
 border-radius:25px;
 overflow:hidden;
 box-shadow:0 10px 30px rgba(0,0,0,.25);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
 }
 
 .card img{
 width:100%;
-height:260px;
+height:180px;
 object-fit:cover;
 }
 
 .info{
-padding:20px;
+padding:15px;
 }
 
 .info h2{
+font-size:15px;
 text-align:center;
 margin-bottom:10px;
 }
 
 .precio{
 text-align:center;
-font-size:1.8rem;
+font-size:1.4rem;
 font-weight:bold;
 color:#0a9b46;
 margin-bottom:15px;
@@ -86,7 +108,7 @@ display:block;
 background:#25D366;
 color:white;
 text-decoration:none;
-padding:14px;
+padding:12px;
 text-align:center;
 border-radius:12px;
 font-weight:600;
@@ -126,6 +148,11 @@ border-radius:15px;
 padding:20px;
 }
 
+.producto-info h1{
+text-align:center;
+margin-bottom:15px;
+}
+
 .producto-precio{
 font-size:2rem;
 font-weight:bold;
@@ -134,6 +161,10 @@ text-align:center;
 margin-bottom:15px;
 }
 
+.producto-info p{
+line-height:1.8;
+margin-bottom:20px;
+}
 video{
 display:block;
 width:95%;
@@ -167,10 +198,10 @@ cursor:pointer;
 
 .whatsapp-fijo{
 position:fixed;
-right:15px;
+right:10px;
 bottom:20px;
-width:55px;
-height:55px;
+width:50px;
+height:50px;
 background:#25D366;
 border-radius:50%;
 display:flex;
@@ -182,10 +213,10 @@ animation:flotar 2s infinite;
 
 .instagram-fijo{
 position:fixed;
-right:15px;
-bottom:90px;
-width:55px;
-height:55px;
+right:10px;
+bottom:80px;
+width:50px;
+height:50px;
 background:#E1306C;
 border-radius:50%;
 display:flex;
@@ -197,8 +228,9 @@ animation:flotar 2s infinite;
 
 .whatsapp-fijo img,
 .instagram-fijo img{
-width:30px;
-height:30px;
+width:28px;
+height:28px;
+object-fit:contain;
 }
 
 @keyframes flotar{
@@ -214,13 +246,14 @@ color:#c8d3e2;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
 
-<img src="imagenes/logo2.jpg" class="logo">
+<img src="imagenes/logo2.jpg" class="logo" alt="VapeStore CTG">
 
 <p>Los mejores vapes y sabores en un solo lugar.</p>
 <p>🚚 Entregas en Cartagena</p>
@@ -229,10 +262,21 @@ color:#c8d3e2;
 
 </header>
 
+<div class="categoria">
+
+<h1>VAPES CON NICOTINA</h1>
+
+<p>
+Selecciona un producto para ver fotos, videos y comprar.
+</p>
+
+</div>
+
 <div id="catalogo" class="catalogo">
 
 <div class="grid">
-<!-- TARJETA 1 -->
+
+<!-- PRODUCTO 1 -->
 
 <div class="card">
 
@@ -252,7 +296,7 @@ Ver producto
 
 </div>
 
-<!-- TARJETA 2 -->
+<!-- PRODUCTO 2 -->
 
 <div class="card">
 
@@ -271,8 +315,7 @@ Ver producto
 </div>
 
 </div>
-
-<!-- TARJETA 3 -->
+<!-- PRODUCTO 3 -->
 
 <div class="card">
 
@@ -292,7 +335,7 @@ Ver producto
 
 </div>
 
-<!-- TARJETA 4 -->
+<!-- PRODUCTO 4 -->
 
 <div class="card">
 
@@ -315,6 +358,7 @@ Ver producto
 </div>
 
 </div>
+
 <!-- HOOKALIT -->
 
 <div id="hookalit" class="detalle">
@@ -330,12 +374,10 @@ Ver producto
 
 <h1>Hookalit 35.000 Puffs</h1>
 
-<div class="producto-precio">
-$40.000
-</div>
+<div class="producto-precio">$40.000</div>
 
 <p>
-El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a la de una hookah. Cuenta con batería recargable y excelente duración.
+El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a la de una hookah.
 </p>
 
 <video controls>
@@ -371,12 +413,10 @@ Volver al catálogo
 
 <h1>Bang Leader 32.000 Puffs</h1>
 
-<div class="producto-precio">
-$50.000
-</div>
+<div class="producto-precio">$50.000</div>
 
 <p>
-Sistema innovador de doble sabor con boquilla giratoria para alternar entre sabores de forma rápida y cómoda.
+Sistema innovador de doble sabor con boquilla giratoria para alternar entre sabores.
 </p>
 
 <video controls>
@@ -432,7 +472,9 @@ Volver al catálogo
 </a>
 
 </div>
+
 </div>
+
 </div>
 
 <!-- HUMO AZUL -->
@@ -470,7 +512,9 @@ Volver al catálogo
 </a>
 
 </div>
+
 </div>
+
 </div>
 
 <script>
@@ -478,6 +522,8 @@ Volver al catálogo
 function mostrar(id){
 
 document.getElementById("catalogo").style.display = "none";
+
+document.querySelector(".categoria").style.display = "none";
 
 document.querySelectorAll(".detalle").forEach(function(item){
 item.style.display = "none";
@@ -499,6 +545,8 @@ item.style.display = "none";
 });
 
 document.getElementById("catalogo").style.display = "block";
+
+document.querySelector(".categoria").style.display = "block";
 
 window.scrollTo({
 top:0,
