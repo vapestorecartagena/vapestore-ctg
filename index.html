@@ -30,7 +30,7 @@ padding:35px 20px;
 text-align:center;
 box-shadow:0 8px 30px rgba(0,0,0,.35);
 }
-  
+
 .logo{
 width:320px;
 max-width:95%;
@@ -39,7 +39,7 @@ display:block;
 margin:0 auto;
 filter:drop-shadow(0 0 20px rgba(0,195,255,.35));
 }
-  
+
 header p{
 color:#c8d3e2;
 }
@@ -69,7 +69,6 @@ display:grid;
 grid-template-columns:repeat(2,1fr);
 gap:12px;
 }
-
 .card{
 background:white;
 color:#222;
@@ -169,6 +168,7 @@ margin-bottom:15px;
 line-height:1.8;
 margin-bottom:20px;
 }
+
 video{
 display:block;
 width:95%;
@@ -199,7 +199,6 @@ text-align:center;
 border-radius:12px;
 cursor:pointer;
 }
-
 .whatsapp-fijo{
 position:fixed;
 right:15px;
@@ -287,7 +286,6 @@ Selecciona un producto para ver fotos, videos y comprar.
 <div id="catalogo" class="catalogo">
 
 <div class="grid">
-
 <!-- PRODUCTO 1 -->
 
 <div class="card">
@@ -327,6 +325,7 @@ Ver producto
 </div>
 
 </div>
+
 <!-- PRODUCTO 3 -->
 
 <div class="card">
@@ -367,10 +366,29 @@ Ver producto
 
 </div>
 
+<!-- PRODUCTO 5 -->
+
+<div class="card">
+
+<img src="imagenes/mote1.jpg" alt="Mote">
+
+<div class="info">
+
+<h2>Mote 25.000 Puffs</h2>
+
+<div class="precio">$35.000</div>
+
+<a class="ver-producto" onclick="mostrar('mote')">
+Ver producto
+</a>
+
+</div>
+
 </div>
 
 </div>
 
+</div>
 <!-- HOOKALIT -->
 
 <div id="hookalit" class="detalle">
@@ -396,8 +414,7 @@ El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñ
 <source src="videos/olit.mp4" type="video/mp4">
 </video>
 
-<a class="comprar"
-href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Hookalit%2035.000%20Puffs">
+<a class="comprar" href="https://wa.me/573001234567">
 Comprar por WhatsApp
 </a>
 
@@ -435,8 +452,7 @@ Sistema innovador de doble sabor con boquilla giratoria para alternar entre sabo
 <source src="videos/bang.mp4" type="video/mp4">
 </video>
 
-<a class="comprar"
-href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Bang%20Leader%2032.000%20Puffs">
+<a class="comprar" href="https://wa.me/573001234567">
 Comprar por WhatsApp
 </a>
 
@@ -449,6 +465,7 @@ Volver al catálogo
 </div>
 
 </div>
+
 <!-- PYNE -->
 
 <div id="pyne" class="detalle">
@@ -474,8 +491,7 @@ Pantalla digital, lluvia de luces y modo turbo de doble potencia.
 <source src="videos/pynevideo.mp4" type="video/mp4">
 </video>
 
-<a class="comprar"
-href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Pyne%20Pod%2020.000%20Puffs">
+<a class="comprar" href="https://wa.me/573001234567">
 Comprar por WhatsApp
 </a>
 
@@ -514,8 +530,7 @@ Diseño exclusivo tipo botella con gran capacidad y excelente producción de vap
 <source src="videos/clasevideo.mp4" type="video/mp4">
 </video>
 
-<a class="comprar"
-href="https://wa.me/57TU_NUMERO?text=Hola,%20quiero%20información%20del%20Humo%20Azul%2024.000%20Puffs">
+<a class="comprar" href="https://wa.me/573001234567">
 Comprar por WhatsApp
 </a>
 
@@ -529,12 +544,48 @@ Volver al catálogo
 
 </div>
 
+<!-- MOTE -->
+
+<div id="mote" class="detalle">
+
+<div class="producto">
+
+<div class="galeria">
+<img src="imagenes/mote1.jpg">
+</div>
+
+<div class="producto-info">
+
+<h1>Mote 25.000 Puffs</h1>
+
+<div class="producto-precio">$35.000</div>
+
+<p>
+El Mote 25.000 Puffs cuenta con modo normal y modo turbo. Incluye pantalla digital para monitorear el nivel de líquido y batería, además de configuraciones de potencia ajustables para una experiencia personalizada.
+</p>
+
+<video controls>
+<source src="videos/motevideo.mp4" type="video/mp4">
+</video>
+
+<a class="comprar" href="https://wa.me/573001234567">
+Comprar por WhatsApp
+</a>
+
+<a class="volver" onclick="volverCatalogo()">
+Volver al catálogo
+</a>
+
+</div>
+
+</div>
+
+</div>
 <script>
 
 function mostrar(id){
 
 document.getElementById("catalogo").style.display = "none";
-
 document.querySelector(".categoria").style.display = "none";
 
 document.querySelectorAll(".detalle").forEach(function(item){
@@ -544,7 +595,7 @@ item.style.display = "none";
 document.getElementById(id).style.display = "block";
 
 }
-  
+
 function volverCatalogo(){
 
 document.querySelectorAll(".detalle").forEach(function(item){
@@ -552,7 +603,6 @@ item.style.display = "none";
 });
 
 document.getElementById("catalogo").style.display = "block";
-
 document.querySelector(".categoria").style.display = "block";
 
 window.scrollTo({
@@ -582,5 +632,4 @@ target="_blank">
 
 </body>
 </html>
-
 
