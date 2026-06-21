@@ -10,10 +10,16 @@
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
 body{
-background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
 url('imagenes/fondopagina.jpg');
 background-size:cover;
 background-position:center;
@@ -21,65 +27,117 @@ background-attachment:fixed;
 color:white;
 }
 
+/* HEADER PRO */
 header{
-background:linear-gradient(135deg,#07152b,#0b1d3a);
-padding:35px 20px;
+background:#0b1d3a;
+padding:25px 15px;
 text-align:center;
-box-shadow:0 8px 30px rgba(0,0,0,.35);
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
-width:320px;
-max-width:95%;
-display:block;
-margin:auto;
-filter:drop-shadow(0 0 20px rgba(0,195,255,.35));
+width:260px;
+max-width:90%;
+filter:drop-shadow(0 0 15px rgba(0,195,255,.35));
 }
 
-.categoria{text-align:center;padding:25px 15px;}
-.categoria h1{font-size:32px;}
-.categoria p{color:#c8d3e2;}
+header p{
+color:#cbd5e1;
+font-size:14px;
+}
 
-.catalogo{max-width:1100px;margin:auto;padding:20px;}
+/* TITULO */
+.categoria{
+text-align:center;
+padding:30px 15px;
+}
+
+.categoria h1{
+font-size:28px;
+}
+
+.categoria p{
+color:#cbd5e1;
+margin-top:5px;
+}
+
+/* GRID TIPO SHOPIFY */
+.catalogo{
+max-width:1200px;
+margin:auto;
+padding:20px;
+}
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:12px;
+grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
+gap:18px;
 }
 
+/* CARD MODERNA */
 .card{
 background:white;
 color:#222;
-border-radius:25px;
+border-radius:18px;
 overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.25);
+box-shadow:0 8px 25px rgba(0,0,0,.25);
+transition:.3s;
+cursor:pointer;
 }
 
-.card img{width:100%;height:180px;object-fit:cover;}
+.card:hover{
+transform:translateY(-6px);
+}
 
-.info{padding:15px;text-align:center;}
+.card img{
+width:100%;
+height:190px;
+object-fit:cover;
+}
 
-.precio{color:#0a9b46;font-weight:bold;margin:10px 0;}
+.info{
+padding:15px;
+text-align:center;
+}
+
+.info h2{
+font-size:14px;
+margin-bottom:8px;
+}
+
+.precio{
+font-size:18px;
+font-weight:bold;
+color:#16a34a;
+margin-bottom:10px;
+}
 
 .ver-producto{
 display:block;
-background:#25D366;
+background:#2563eb;
 color:white;
-padding:12px;
-border-radius:12px;
+padding:10px;
+border-radius:10px;
 text-decoration:none;
 font-weight:600;
 cursor:pointer;
 }
 
-/* DETALLE */
-.detalle{display:none;max-width:900px;margin:auto;padding:20px;}
+/* DETALLE PRODUCTO */
+.detalle{
+display:none;
+max-width:900px;
+margin:auto;
+padding:20px;
+}
 
 .producto{
 background:white;
 color:#222;
-border-radius:25px;
+border-radius:20px;
 overflow:hidden;
 box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
@@ -87,40 +145,78 @@ box-shadow:0 10px 30px rgba(0,0,0,.25);
 .galeria{
 display:flex;
 flex-wrap:wrap;
+gap:10px;
 justify-content:center;
-gap:15px;
-padding:20px;
-}
-
-.galeria img{width:45%;max-width:300px;border-radius:15px;}
-
-.producto-info{text-align:center;padding:20px;}
-
-.producto-precio{font-size:2rem;color:#0a9b46;font-weight:bold;margin:10px 0;}
-
-video{
-width:95%;
-max-width:500px;
-display:block;
-margin:20px auto;
-border-radius:15px;
-}
-
-.comprar,.volver{
-display:block;
 padding:15px;
+}
+
+.galeria img{
+width:48%;
 border-radius:12px;
-text-decoration:none;
-font-weight:bold;
+object-fit:cover;
+}
+
+.producto-info{
+padding:20px;
 text-align:center;
+}
+
+.producto-info h1{
 margin-bottom:10px;
 }
 
-.comprar{background:#25D366;color:white;}
-.volver{background:#07152b;color:white;cursor:pointer;}
+.producto-precio{
+font-size:24px;
+font-weight:bold;
+color:#16a34a;
+margin-bottom:10px;
+}
 
-/* ICONOS */
-.whatsapp-fijo,.instagram-fijo{
+.producto-info p{
+font-size:14px;
+line-height:1.6;
+margin-bottom:15px;
+}
+
+/* VIDEO */
+video{
+width:100%;
+max-width:450px;
+border-radius:12px;
+margin:15px auto;
+display:block;
+}
+
+/* BOTONES */
+.comprar{
+display:block;
+background:#25D366;
+color:white;
+padding:12px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+margin:10px auto;
+width:90%;
+max-width:300px;
+}
+
+.volver{
+display:block;
+background:#0b1d3a;
+color:white;
+padding:12px;
+border-radius:10px;
+text-decoration:none;
+margin:10px auto;
+width:90%;
+max-width:300px;
+cursor:pointer;
+}
+
+/* ICONOS FLOTANTES */
+.whatsapp-fijo,
+.instagram-fijo{
 position:fixed;
 right:15px;
 width:50px;
@@ -129,14 +225,15 @@ border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-animation:flotar 2s infinite;
 z-index:9999;
+animation:flotar 2s infinite;
 }
 
 .whatsapp-fijo{bottom:20px;}
 .instagram-fijo{bottom:90px;}
 
-.whatsapp-fijo img,.instagram-fijo img{
+.whatsapp-fijo img,
+.instagram-fijo img{
 width:100%;
 height:100%;
 border-radius:50%;
@@ -144,11 +241,17 @@ border-radius:50%;
 
 @keyframes flotar{
 0%{transform:translateY(0);}
-50%{transform:translateY(-8px);}
+50%{transform:translateY(-7px);}
 100%{transform:translateY(0);}
 }
 
-footer{text-align:center;padding:25px;color:#c8d3e2;}
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+color:#cbd5e1;
+font-size:13px;
+}
 
 </style>
 </head>
@@ -157,64 +260,60 @@ footer{text-align:center;padding:25px;color:#c8d3e2;}
 
 <header>
 <img src="imagenes/logo2.png" class="logo">
-<p>Entregas en Cartagena • Pago contra entrega</p>
+<p>Entregas en Cartagena • Pago contra entrega • Productos originales</p>
 </header>
 
 <div class="categoria">
-<h1>VAPES CON NICOTINA</h1>
-<p>Selecciona un producto</p>
+<h1>🔥 CATÁLOGO VAPE STORE</h1>
+<p>Selecciona un producto para ver fotos y videos</p>
 </div>
 
+<!-- CATALOGO -->
 <div id="catalogo" class="catalogo">
 <div class="grid">
 
-<!-- 1 -->
-<div class="card">
+<div class="card" onclick="mostrar('hookalit')">
 <img src="imagenes/olit1.jpg">
 <div class="info">
 <h2>Hookalit 35.000 Puffs</h2>
 <div class="precio">$40.000</div>
-<a class="ver-producto" onclick="mostrar('hookalit')">Ver producto</a>
+<div class="ver-producto">Ver producto</div>
 </div>
 </div>
 
-<!-- 2 -->
-<div class="card">
+<div class="card" onclick="mostrar('bang')">
 <img src="imagenes/bang1.jpg">
 <div class="info">
 <h2>Bang Leader 32.000 Puffs</h2>
 <div class="precio">$50.000</div>
-<a class="ver-producto" onclick="mostrar('bang')">Ver producto</a>
+<div class="ver-producto">Ver producto</div>
 </div>
 </div>
 
-<!-- 3 -->
-<div class="card">
+<div class="card" onclick="mostrar('pyne')">
 <img src="imagenes/pyne1.jpg">
 <div class="info">
 <h2>Pyne Pod 20.000 Puffs</h2>
 <div class="precio">$35.000</div>
-<a class="ver-producto" onclick="mostrar('pyne')">Ver producto</a>
+<div class="ver-producto">Ver producto</div>
 </div>
 </div>
 
-<!-- 4 -->
-<div class="card">
+<div class="card" onclick="mostrar('humo')">
 <img src="imagenes/clase1.jpg">
 <div class="info">
 <h2>Humo Azul 24.000 Puffs</h2>
 <div class="precio">$45.000</div>
-<a class="ver-producto" onclick="mostrar('humo')">Ver producto</a>
+<div class="ver-producto">Ver producto</div>
 </div>
 </div>
 
-<!-- 5 -->
-<div class="card">
+<div class="card" onclick="mostrar('mote')">
 <img src="imagenes/mote1.jpg">
 <div class="info">
 <h2>Mote 25.000 Puffs</h2>
 <div class="precio">$35.000</div>
-<a class="ver-producto" onclick="mostrar('mote')">Ver producto</a>
+<div class="ver-producto">Ver producto</div>
 </div>
 </div>
 
@@ -224,6 +323,7 @@ footer{text-align:center;padding:25px;color:#c8d3e2;}
 <!-- HOOKALIT -->
 <div id="hookalit" class="detalle">
 <div class="producto">
+
 <div class="galeria">
 <img src="imagenes/olit1.jpg">
 <img src="imagenes/olit2.jpg">
@@ -241,12 +341,14 @@ footer{text-align:center;padding:25px;color:#c8d3e2;}
 <a class="comprar" href="https://wa.me/573019470749" target="_blank">Comprar por WhatsApp</a>
 <a class="volver" onclick="volverCatalogo()">Volver</a>
 </div>
+
 </div>
 </div>
 
 <!-- BANG -->
 <div id="bang" class="detalle">
 <div class="producto">
+
 <div class="galeria">
 <img src="imagenes/bang1.jpg">
 </div>
@@ -263,12 +365,14 @@ footer{text-align:center;padding:25px;color:#c8d3e2;}
 <a class="comprar" href="https://wa.me/573019470749" target="_blank">Comprar por WhatsApp</a>
 <a class="volver" onclick="volverCatalogo()">Volver</a>
 </div>
+
 </div>
 </div>
 
 <!-- PYNE -->
 <div id="pyne" class="detalle">
 <div class="producto">
+
 <div class="galeria">
 <img src="imagenes/pyne1.jpg">
 <img src="imagenes/pyne2.jpg">
@@ -286,12 +390,14 @@ footer{text-align:center;padding:25px;color:#c8d3e2;}
 <a class="comprar" href="https://wa.me/573019470749" target="_blank">Comprar por WhatsApp</a>
 <a class="volver" onclick="volverCatalogo()">Volver</a>
 </div>
+
 </div>
 </div>
 
 <!-- HUMO AZUL -->
 <div id="humo" class="detalle">
 <div class="producto">
+
 <div class="galeria">
 <img src="imagenes/clase1.jpg">
 <img src="imagenes/clase2.jpg">
@@ -309,12 +415,14 @@ footer{text-align:center;padding:25px;color:#c8d3e2;}
 <a class="comprar" href="https://wa.me/573019470749" target="_blank">Comprar por WhatsApp</a>
 <a class="volver" onclick="volverCatalogo()">Volver</a>
 </div>
+
 </div>
 </div>
 
 <!-- MOTE -->
 <div id="mote" class="detalle">
 <div class="producto">
+
 <div class="galeria">
 <img src="imagenes/mote1.jpg">
 </div>
@@ -331,6 +439,7 @@ footer{text-align:center;padding:25px;color:#c8d3e2;}
 <a class="comprar" href="https://wa.me/573019470749" target="_blank">Comprar por WhatsApp</a>
 <a class="volver" onclick="volverCatalogo()">Volver</a>
 </div>
+
 </div>
 </div>
 
@@ -365,3 +474,4 @@ window.scrollTo({top:0,behavior:"smooth"});
 
 </body>
 </html>
+
