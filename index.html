@@ -10,7 +10,6 @@
 
 <style>
 
-/* RESET */
 *{
 margin:0;
 padding:0;
@@ -23,62 +22,32 @@ background:#0b0f17;
 color:white;
 }
 
-/* NAVBAR */
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:10px 15px;
-background:#111827;
-position:sticky;
-top:0;
-z-index:1000;
-flex-wrap:wrap;
-}
-
-/* 🔥 LOGO IMAGEN */
-.logo-img{
-height:40px;
-width:auto;
-object-fit:contain;
-}
-
-/* SEARCH */
-.search{
-flex:1;
-display:flex;
-margin:8px 10px;
-}
-
-.search input{
-width:100%;
-padding:10px;
-border:none;
-border-radius:6px 0 0 6px;
-}
-
-.search button{
-padding:10px;
-border:none;
-background:#00c3ff;
-color:white;
-border-radius:0 6px 6px 0;
-}
-
 /* HERO */
 .hero{
 background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
 url('imagenes/fondopagina.jpg');
 background-size:cover;
 background-position:center;
-padding:60px 15px;
+padding:70px 15px;
 text-align:center;
 }
 
-.hero h1{font-size:26px;}
-.hero p{color:#cbd5e1;font-size:13px;margin-top:5px;}
+/* LOGO GRANDE */
+.hero-logo{
+width:220px;
+max-width:80%;
+margin:auto;
+display:block;
+filter:drop-shadow(0 0 20px rgba(0,195,255,.5));
+}
 
-/* GRID 2 POR FILA */
+.hero p{
+color:#cbd5e1;
+margin-top:10px;
+font-size:14px;
+}
+
+/* GRID 2 PRODUCTOS SIEMPRE */
 .grid{
 display:grid;
 grid-template-columns:repeat(2, 1fr);
@@ -88,7 +57,6 @@ max-width:1100px;
 margin:auto;
 }
 
-/* RESPONSIVE SIEMPRE 2 */
 @media (max-width:768px){
 .grid{grid-template-columns:repeat(2, 1fr);}
 }
@@ -138,7 +106,7 @@ color:white;
 font-size:12px;
 }
 
-/* DETALLE */
+/* DETALLE PRODUCTO */
 .detail{
 display:none;
 max-width:900px;
@@ -170,6 +138,7 @@ margin-top:10px;
 border-radius:10px;
 }
 
+/* BOTONES */
 .buy{
 display:block;
 background:#25D366;
@@ -219,22 +188,13 @@ font-size:12px;
 
 <body>
 
-<!-- NAVBAR CON LOGO -->
-<div class="navbar">
-
-<img src="imagenes/logo2.png" class="logo-img" alt="Logo VapeStore">
-
-<div class="search">
-<input placeholder="Buscar productos...">
-<button>🔍</button>
-</div>
-
-</div>
-
-<!-- HERO -->
+<!-- HERO CON LOGO -->
 <div class="hero">
-<h1>Vapes Premium CTG</h1>
-<p>Entrega rápida • Contra entrega</p>
+
+<img src="imagenes/logo2.png" class="hero-logo" alt="Logo">
+
+<p>Entrega rápida • Pago contra entrega • Productos originales</p>
+
 </div>
 
 <!-- CATALOGO -->
@@ -291,10 +251,13 @@ font-size:12px;
 
 <div id="hookalit" class="detail">
 <div class="product">
+
+<div class="gallery">
 <img src="imagenes/olit1.jpg">
 <img src="imagenes/olit2.jpg">
+</div>
 
-<h3>Hookalit 35.000</h3>
+<h3>Hookalit 35.000 Puffs</h3>
 <p>$40.000</p>
 
 <video controls>
@@ -303,6 +266,89 @@ font-size:12px;
 
 <a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
 <div class="back" onclick="back()">Volver</div>
+
+</div>
+</div>
+
+<div id="bang" class="detail">
+<div class="product">
+
+<div class="gallery">
+<img src="imagenes/bang1.jpg">
+</div>
+
+<h3>Bang Leader 32.000 Puffs</h3>
+<p>$50.000</p>
+
+<video controls>
+<source src="videos/bang.mp4">
+</video>
+
+<a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
+<div class="back" onclick="back()">Volver</div>
+
+</div>
+</div>
+
+<div id="pyne" class="detail">
+<div class="product">
+
+<div class="gallery">
+<img src="imagenes/pyne1.jpg">
+<img src="imagenes/pyne2.jpg">
+</div>
+
+<h3>Pyne Pod 20.000 Puffs</h3>
+<p>$35.000</p>
+
+<video controls>
+<source src="videos/pynevideo.mp4">
+</video>
+
+<a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
+<div class="back" onclick="back()">Volver</div>
+
+</div>
+</div>
+
+<div id="humo" class="detail">
+<div class="product">
+
+<div class="gallery">
+<img src="imagenes/clase1.jpg">
+<img src="imagenes/clase2.jpg">
+</div>
+
+<h3>Humo Azul 24.000 Puffs</h3>
+<p>$45.000</p>
+
+<video controls>
+<source src="videos/clasevideo.mp4">
+</video>
+
+<a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
+<div class="back" onclick="back()">Volver</div>
+
+</div>
+</div>
+
+<div id="mote" class="detail">
+<div class="product">
+
+<div class="gallery">
+<img src="imagenes/mote1.jpg">
+</div>
+
+<h3>Mote 25.000 Puffs</h3>
+<p>$35.000</p>
+
+<video controls>
+<source src="videos/motevideo.mp4">
+</video>
+
+<a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
+<div class="back" onclick="back()">Volver</div>
+
 </div>
 </div>
 
@@ -312,6 +358,7 @@ font-size:12px;
 function openProduct(id){
 document.getElementById("catalogo").style.display="none";
 document.getElementById(id).style.display="block";
+window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function back(){
@@ -326,8 +373,4 @@ document.getElementById("catalogo").style.display="grid";
 
 </body>
 </html>
-
-
-
-
 
