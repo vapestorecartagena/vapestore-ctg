@@ -10,6 +10,7 @@
 
 <style>
 
+/* RESET */
 *{
 margin:0;
 padding:0;
@@ -27,22 +28,36 @@ color:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px;
+padding:12px;
 background:#111827;
 position:sticky;
 top:0;
 z-index:1000;
+flex-wrap:wrap;
 }
 
-.logo{font-weight:700;color:#00c3ff;}
+.logo{
+font-weight:700;
+color:#00c3ff;
+font-size:16px;
+}
 
-.search{flex:1;margin:0 10px;display:flex;}
+/* SEARCH */
+.search{
+flex:1;
+display:flex;
+margin:8px 10px;
+min-width:120px;
+}
+
 .search input{
 width:100%;
 padding:10px;
 border:none;
 border-radius:6px 0 0 6px;
+font-size:14px;
 }
+
 .search button{
 padding:10px;
 border:none;
@@ -53,8 +68,9 @@ border-radius:0 6px 6px 0;
 
 .cart{
 background:#25D366;
-padding:10px;
+padding:8px 10px;
 border-radius:8px;
+font-size:14px;
 }
 
 /* HERO */
@@ -63,82 +79,108 @@ background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
 url('imagenes/fondopagina.jpg');
 background-size:cover;
 background-position:center;
-padding:70px 20px;
+padding:50px 15px;
 text-align:center;
 }
 
-.hero h1{font-size:35px;}
-.hero p{color:#cbd5e1;margin-top:5px;}
+.hero h1{
+font-size:24px;
+}
 
-/* GRID 2 POR FILA */
+.hero p{
+color:#cbd5e1;
+font-size:13px;
+margin-top:5px;
+}
+
+/* GRID RESPONSIVE REAL */
 .grid{
 display:grid;
 grid-template-columns:repeat(2, 1fr);
-gap:15px;
-padding:20px;
+gap:12px;
+padding:15px;
 max-width:1100px;
 margin:auto;
 }
 
-/* RESPONSIVE */
-@media (max-width:700px){
-.grid{grid-template-columns:repeat(2, 1fr);}
-.card img{height:160px;}
+/* TABLET */
+@media (max-width:768px){
+.grid{
+grid-template-columns:repeat(2, 1fr);
+}
 }
 
-@media (max-width:450px){
-.grid{grid-template-columns:repeat(1, 1fr);}
+/* CELULAR */
+@media (max-width:500px){
+.grid{
+grid-template-columns:repeat(1, 1fr);
+}
 }
 
 /* CARD */
 .card{
 background:#111827;
-border-radius:15px;
+border-radius:12px;
 overflow:hidden;
 cursor:pointer;
-transition:.3s;
+transition:.2s;
 }
 
-.card:hover{transform:translateY(-5px);}
+.card:hover{
+transform:scale(1.02);
+}
 
 .card img{
 width:100%;
-height:200px;
+height:160px;
 object-fit:cover;
 }
 
-.info{padding:15px;}
+.info{
+padding:10px;
+text-align:center;
+}
 
-.price{color:#00ff88;font-weight:bold;margin:10px 0;}
+.info h3{
+font-size:14px;
+}
+
+.price{
+color:#00ff88;
+font-weight:bold;
+margin:6px 0;
+font-size:14px;
+}
 
 .btn{
 display:block;
 text-align:center;
-padding:10px;
+padding:8px;
 background:#00c3ff;
-border-radius:10px;
+border-radius:8px;
 color:white;
+font-size:13px;
 }
 
-/* DETALLE */
+/* PRODUCTO DETALLE */
 .detail{
 display:none;
 max-width:900px;
 margin:auto;
-padding:20px;
+padding:15px;
 }
 
 .product{
 background:#111827;
 border-radius:15px;
-padding:15px;
+padding:12px;
 }
 
 .gallery{
 display:flex;
 flex-wrap:wrap;
+gap:8px;
 justify-content:center;
-gap:10px;
 }
 
 .product img{
@@ -148,7 +190,7 @@ border-radius:10px;
 
 video{
 width:100%;
-margin-top:15px;
+margin-top:10px;
 border-radius:10px;
 }
 
@@ -160,6 +202,7 @@ border-radius:10px;
 text-align:center;
 color:white;
 margin-top:10px;
+font-size:14px;
 }
 
 .back{
@@ -169,22 +212,31 @@ padding:12px;
 border-radius:10px;
 text-align:center;
 margin-top:10px;
+font-size:14px;
 cursor:pointer;
 }
 
-/* WHATSAPP */
+/* WHATSAPP FLOTANTE */
 .whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
-width:55px;
-height:55px;
+bottom:15px;
+right:15px;
+width:52px;
+height:52px;
 background:#25D366;
 border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:30px;
+font-size:26px;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+color:#cbd5e1;
+font-size:12px;
 }
 
 </style>
@@ -197,23 +249,22 @@ font-size:30px;
 <div class="logo">VapeStore CTG</div>
 
 <div class="search">
-<input placeholder="Buscar productos...">
+<input placeholder="Buscar...">
 <button>🔍</button>
 </div>
 
-<div class="cart">🛒 0</div>
+<div class="cart">🛒</div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-<h1>Vapes Premium en Cartagena</h1>
-<p>Entrega rápida • Pago contra entrega</p>
+<h1>Vapes Premium CTG</h1>
+<p>Entrega rápida • Contra entrega</p>
 </div>
 
 <!-- CATALOGO -->
 <div id="catalogo" class="grid">
 
-<!-- HOOKALIT -->
 <div class="card" onclick="openProduct('hookalit')">
 <img src="imagenes/olit1.jpg">
 <div class="info">
@@ -223,7 +274,6 @@ font-size:30px;
 </div>
 </div>
 
-<!-- BANG -->
 <div class="card" onclick="openProduct('bang')">
 <img src="imagenes/bang1.jpg">
 <div class="info">
@@ -233,7 +283,6 @@ font-size:30px;
 </div>
 </div>
 
-<!-- PYNE -->
 <div class="card" onclick="openProduct('pyne')">
 <img src="imagenes/pyne1.jpg">
 <div class="info">
@@ -243,7 +292,6 @@ font-size:30px;
 </div>
 </div>
 
-<!-- HUMO -->
 <div class="card" onclick="openProduct('humo')">
 <img src="imagenes/clase1.jpg">
 <div class="info">
@@ -253,7 +301,6 @@ font-size:30px;
 </div>
 </div>
 
-<!-- MOTE -->
 <div class="card" onclick="openProduct('mote')">
 <img src="imagenes/mote1.jpg">
 <div class="info">
@@ -265,9 +312,7 @@ font-size:30px;
 
 </div>
 
-<!-- PRODUCTOS -->
-
-<!-- HOOKALIT -->
+<!-- PRODUCTO HOOKALIT -->
 <div id="hookalit" class="detail">
 <div class="product">
 
@@ -276,7 +321,7 @@ font-size:30px;
 <img src="imagenes/olit2.jpg">
 </div>
 
-<h2>Hookalit 35.000 Puffs</h2>
+<h3>Hookalit 35.000 Puffs</h3>
 <p>$40.000</p>
 
 <video controls>
@@ -292,12 +337,11 @@ font-size:30px;
 <!-- BANG -->
 <div id="bang" class="detail">
 <div class="product">
-
 <div class="gallery">
 <img src="imagenes/bang1.jpg">
 </div>
 
-<h2>Bang Leader 32.000 Puffs</h2>
+<h3>Bang Leader 32.000</h3>
 <p>$50.000</p>
 
 <video controls>
@@ -306,20 +350,18 @@ font-size:30px;
 
 <a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
 <div class="back" onclick="back()">Volver</div>
-
 </div>
 </div>
 
 <!-- PYNE -->
 <div id="pyne" class="detail">
 <div class="product">
-
 <div class="gallery">
 <img src="imagenes/pyne1.jpg">
 <img src="imagenes/pyne2.jpg">
 </div>
 
-<h2>Pyne Pod 20.000 Puffs</h2>
+<h3>Pyne Pod 20.000</h3>
 <p>$35.000</p>
 
 <video controls>
@@ -328,20 +370,18 @@ font-size:30px;
 
 <a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
 <div class="back" onclick="back()">Volver</div>
-
 </div>
 </div>
 
 <!-- HUMO -->
 <div id="humo" class="detail">
 <div class="product">
-
 <div class="gallery">
 <img src="imagenes/clase1.jpg">
 <img src="imagenes/clase2.jpg">
 </div>
 
-<h2>Humo Azul 24.000 Puffs</h2>
+<h3>Humo Azul 24.000</h3>
 <p>$45.000</p>
 
 <video controls>
@@ -350,19 +390,17 @@ font-size:30px;
 
 <a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
 <div class="back" onclick="back()">Volver</div>
-
 </div>
 </div>
 
 <!-- MOTE -->
 <div id="mote" class="detail">
 <div class="product">
-
 <div class="gallery">
 <img src="imagenes/mote1.jpg">
 </div>
 
-<h2>Mote 25.000 Puffs</h2>
+<h3>Mote 25.000</h3>
 <p>$35.000</p>
 
 <video controls>
@@ -371,7 +409,6 @@ font-size:30px;
 
 <a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
 <div class="back" onclick="back()">Volver</div>
-
 </div>
 </div>
 
@@ -381,6 +418,7 @@ font-size:30px;
 function openProduct(id){
 document.getElementById("catalogo").style.display="none";
 document.getElementById(id).style.display="block";
+window.scrollTo({top:0,behavior:"smooth"});
 }
 
 function back(){
@@ -395,6 +433,7 @@ document.getElementById("catalogo").style.display="grid";
 
 </body>
 </html>
+
 
 
 
