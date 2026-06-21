@@ -10,9 +10,17 @@
 
 <style>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
 
-body{background:#0b0f17;color:white;}
+body{
+background:#0b0f17;
+color:white;
+}
 
 /* NAVBAR */
 .navbar{
@@ -29,16 +37,32 @@ z-index:1000;
 .logo{font-weight:700;color:#00c3ff;}
 
 .search{flex:1;margin:0 10px;display:flex;}
-.search input{width:100%;padding:10px;border:none;border-radius:6px 0 0 6px;}
-.search button{padding:10px;border:none;background:#00c3ff;color:white;border-radius:0 6px 6px 0;}
+.search input{
+width:100%;
+padding:10px;
+border:none;
+border-radius:6px 0 0 6px;
+}
+.search button{
+padding:10px;
+border:none;
+background:#00c3ff;
+color:white;
+border-radius:0 6px 6px 0;
+}
 
-.cart{background:#25D366;padding:10px;border-radius:8px;}
+.cart{
+background:#25D366;
+padding:10px;
+border-radius:8px;
+}
 
 /* HERO */
 .hero{
 background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
 url('imagenes/fondopagina.jpg');
 background-size:cover;
+background-position:center;
 padding:70px 20px;
 text-align:center;
 }
@@ -46,14 +70,24 @@ text-align:center;
 .hero h1{font-size:35px;}
 .hero p{color:#cbd5e1;margin-top:5px;}
 
-/* GRID */
+/* GRID 2 POR FILA */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(2, 1fr);
 gap:15px;
 padding:20px;
 max-width:1100px;
 margin:auto;
+}
+
+/* RESPONSIVE */
+@media (max-width:700px){
+.grid{grid-template-columns:repeat(2, 1fr);}
+.card img{height:160px;}
+}
+
+@media (max-width:450px){
+.grid{grid-template-columns:repeat(1, 1fr);}
 }
 
 /* CARD */
@@ -84,10 +118,9 @@ padding:10px;
 background:#00c3ff;
 border-radius:10px;
 color:white;
-text-decoration:none;
 }
 
-/* PRODUCT DETAIL */
+/* DETALLE */
 .detail{
 display:none;
 max-width:900px;
@@ -98,20 +131,19 @@ padding:20px;
 .product{
 background:#111827;
 border-radius:15px;
-overflow:hidden;
 padding:15px;
-}
-
-.product img{
-width:48%;
-border-radius:10px;
-margin:5px;
 }
 
 .gallery{
 display:flex;
 flex-wrap:wrap;
 justify-content:center;
+gap:10px;
+}
+
+.product img{
+width:48%;
+border-radius:10px;
 }
 
 video{
@@ -128,7 +160,6 @@ border-radius:10px;
 text-align:center;
 color:white;
 margin-top:10px;
-text-decoration:none;
 }
 
 .back{
@@ -164,22 +195,25 @@ font-size:30px;
 <!-- NAVBAR -->
 <div class="navbar">
 <div class="logo">VapeStore CTG</div>
+
 <div class="search">
-<input placeholder="Buscar...">
+<input placeholder="Buscar productos...">
 <button>🔍</button>
 </div>
+
 <div class="cart">🛒 0</div>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-<h1>Vapes Premium CTG</h1>
-<p>Entrega rápida • Contra entrega</p>
+<h1>Vapes Premium en Cartagena</h1>
+<p>Entrega rápida • Pago contra entrega</p>
 </div>
 
 <!-- CATALOGO -->
 <div id="catalogo" class="grid">
 
+<!-- HOOKALIT -->
 <div class="card" onclick="openProduct('hookalit')">
 <img src="imagenes/olit1.jpg">
 <div class="info">
@@ -189,6 +223,7 @@ font-size:30px;
 </div>
 </div>
 
+<!-- BANG -->
 <div class="card" onclick="openProduct('bang')">
 <img src="imagenes/bang1.jpg">
 <div class="info">
@@ -198,6 +233,7 @@ font-size:30px;
 </div>
 </div>
 
+<!-- PYNE -->
 <div class="card" onclick="openProduct('pyne')">
 <img src="imagenes/pyne1.jpg">
 <div class="info">
@@ -207,6 +243,7 @@ font-size:30px;
 </div>
 </div>
 
+<!-- HUMO -->
 <div class="card" onclick="openProduct('humo')">
 <img src="imagenes/clase1.jpg">
 <div class="info">
@@ -216,11 +253,24 @@ font-size:30px;
 </div>
 </div>
 
+<!-- MOTE -->
+<div class="card" onclick="openProduct('mote')">
+<img src="imagenes/mote1.jpg">
+<div class="info">
+<h3>Mote 25.000</h3>
+<div class="price">$35.000</div>
+<div class="btn">Ver producto</div>
+</div>
 </div>
 
-<!-- PRODUCT HOOKALIT -->
+</div>
+
+<!-- PRODUCTOS -->
+
+<!-- HOOKALIT -->
 <div id="hookalit" class="detail">
 <div class="product">
+
 <div class="gallery">
 <img src="imagenes/olit1.jpg">
 <img src="imagenes/olit2.jpg">
@@ -235,17 +285,19 @@ font-size:30px;
 
 <a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
 <div class="back" onclick="back()">Volver</div>
+
 </div>
 </div>
 
 <!-- BANG -->
 <div id="bang" class="detail">
 <div class="product">
+
 <div class="gallery">
 <img src="imagenes/bang1.jpg">
 </div>
 
-<h2>Bang Leader 32.000</h2>
+<h2>Bang Leader 32.000 Puffs</h2>
 <p>$50.000</p>
 
 <video controls>
@@ -254,18 +306,20 @@ font-size:30px;
 
 <a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
 <div class="back" onclick="back()">Volver</div>
+
 </div>
 </div>
 
 <!-- PYNE -->
 <div id="pyne" class="detail">
 <div class="product">
+
 <div class="gallery">
 <img src="imagenes/pyne1.jpg">
 <img src="imagenes/pyne2.jpg">
 </div>
 
-<h2>Pyne Pod 20.000</h2>
+<h2>Pyne Pod 20.000 Puffs</h2>
 <p>$35.000</p>
 
 <video controls>
@@ -274,18 +328,20 @@ font-size:30px;
 
 <a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
 <div class="back" onclick="back()">Volver</div>
+
 </div>
 </div>
 
 <!-- HUMO -->
 <div id="humo" class="detail">
 <div class="product">
+
 <div class="gallery">
 <img src="imagenes/clase1.jpg">
 <img src="imagenes/clase2.jpg">
 </div>
 
-<h2>Humo Azul 24.000</h2>
+<h2>Humo Azul 24.000 Puffs</h2>
 <p>$45.000</p>
 
 <video controls>
@@ -294,6 +350,28 @@ font-size:30px;
 
 <a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
 <div class="back" onclick="back()">Volver</div>
+
+</div>
+</div>
+
+<!-- MOTE -->
+<div id="mote" class="detail">
+<div class="product">
+
+<div class="gallery">
+<img src="imagenes/mote1.jpg">
+</div>
+
+<h2>Mote 25.000 Puffs</h2>
+<p>$35.000</p>
+
+<video controls>
+<source src="videos/motevideo.mp4">
+</video>
+
+<a class="buy" href="https://wa.me/573019470749">Comprar por WhatsApp</a>
+<div class="back" onclick="back()">Volver</div>
+
 </div>
 </div>
 
@@ -317,4 +395,7 @@ document.getElementById("catalogo").style.display="grid";
 
 </body>
 </html>
+
+
+
 
