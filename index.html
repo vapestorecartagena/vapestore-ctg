@@ -25,10 +25,9 @@ linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
 url('imagenes/fondopagina.jpg');
 background-size:cover;
 background-position:center;
-background-attachment:scroll;
+background-attachment:fixed;
 color:white;
 }
-
 header{
 background:linear-gradient(135deg,#07152b,#0b1d3a);
 padding:35px 20px;
@@ -37,16 +36,16 @@ box-shadow:0 8px 30px rgba(0,0,0,.35);
 }
 
 .logo{
-width:380px;
+width:320px;
 max-width:95%;
 height:auto;
 display:block;
-margin:auto;
+margin:0 auto;
+filter:drop-shadow(0 0 20px rgba(0,195,255,.35));
 }
 
 header p{
 color:#c8d3e2;
-margin-top:5px;
 }
 
 .categoria{
@@ -59,6 +58,10 @@ font-size:32px;
 margin-bottom:10px;
 }
 
+.categoria p{
+color:#c8d3e2;
+}
+
 .catalogo{
 max-width:1100px;
 margin:auto;
@@ -68,9 +71,8 @@ padding:20px;
 .grid{
 display:grid;
 grid-template-columns:repeat(2,1fr);
-gap:15px;
+gap:12px;
 }
-
 .card{
 background:white;
 color:#222;
@@ -86,7 +88,7 @@ transform:translateY(-5px);
 
 .card img{
 width:100%;
-height:220px;
+height:180px;
 object-fit:cover;
 }
 
@@ -95,7 +97,7 @@ padding:15px;
 }
 
 .info h2{
-font-size:16px;
+font-size:15px;
 text-align:center;
 margin-bottom:10px;
 }
@@ -153,12 +155,22 @@ border-radius:15px;
 padding:20px;
 }
 
+.producto-info h1{
+text-align:center;
+margin-bottom:15px;
+}
+
 .producto-precio{
 font-size:2rem;
 font-weight:bold;
 color:#0a9b46;
 text-align:center;
 margin-bottom:15px;
+}
+
+.producto-info p{
+line-height:1.8;
+margin-bottom:20px;
 }
 
 video{
@@ -191,26 +203,61 @@ text-align:center;
 border-radius:12px;
 cursor:pointer;
 }
+.whatsapp-fijo{
+position:fixed;
+right:15px;
+bottom:20px;
+width:50px;
+height:50px;
+border-radius:50%;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+animation:flotar 2s infinite;
+}
+
+.instagram-fijo{
+position:fixed;
+right:15px;
+bottom:90px;
+width:50px;
+height:50px;
+border-radius:50%;
+overflow:hidden;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+box-shadow:0 0 20px rgba(225,48,108,.7);
+animation:flotar 2s infinite;
+}
+
+.whatsapp-fijo img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:50%;
+}
+
+.instagram-fijo img{
+width:100%;
+height:100%;
+object-fit:cover;
+border-radius:50%;
+}
+
+@keyframes flotar{
+0%{transform:translateY(0);}
+50%{transform:translateY(-8px);}
+100%{transform:translateY(0);}
+}
 
 footer{
 text-align:center;
 padding:25px;
-}
-
-@media(max-width:768px){
-
-.grid{
-grid-template-columns:1fr;
-}
-
-.galeria img{
-width:100%;
-}
-
-.logo{
-width:300px;
-}
-
+color:#c8d3e2;
 }
 
 </style>
@@ -234,7 +281,9 @@ width:300px;
 
 <h1>VAPES CON NICOTINA</h1>
 
-<p>Selecciona un producto para ver fotos, videos y comprar.</p>
+<p>
+Selecciona un producto para ver fotos, videos y comprar.
+</p>
 
 </div>
 
@@ -245,7 +294,7 @@ width:300px;
 
 <div class="card">
 
-<img src="imagenes/olit1.jpg" loading="lazy" alt="Hookalit">
+<img src="imagenes/olit1.jpg" alt="Hookalit">
 
 <div class="info">
 
@@ -265,7 +314,7 @@ Ver producto
 
 <div class="card">
 
-<img src="imagenes/bang1.jpg" loading="lazy" alt="Bang Leader">
+<img src="imagenes/bang1.jpg" alt="Bang Leader">
 
 <div class="info">
 
@@ -285,7 +334,7 @@ Ver producto
 
 <div class="card">
 
-<img src="imagenes/pyne1.jpg" loading="lazy" alt="Pyne Pod">
+<img src="imagenes/pyne1.jpg" alt="Pyne Pod">
 
 <div class="info">
 
@@ -305,7 +354,7 @@ Ver producto
 
 <div class="card">
 
-<img src="imagenes/clase1.jpg" loading="lazy" alt="Humo Azul">
+<img src="imagenes/clase1.jpg" alt="Humo Azul">
 
 <div class="info">
 
@@ -325,7 +374,7 @@ Ver producto
 
 <div class="card">
 
-<img src="imagenes/mote1.jpg" loading="lazy" alt="Mote">
+<img src="imagenes/mote1.jpg" alt="Mote">
 
 <div class="info">
 
@@ -351,8 +400,8 @@ Ver producto
 <div class="producto">
 
 <div class="galeria">
-<img src="imagenes/olit1.jpg" loading="lazy">
-<img src="imagenes/olit2.jpg" loading="lazy">
+<img src="imagenes/olit1.jpg">
+<img src="imagenes/olit2.jpg">
 </div>
 
 <div class="producto-info">
@@ -365,7 +414,7 @@ Ver producto
 El Hookalit 35.000 Puffs es un dispositivo desechable de alto rendimiento diseñado para brindar una experiencia similar a la de una hookah.
 </p>
 
-<video controls preload="metadata" playsinline>
+<video controls>
 <source src="videos/olit.mp4" type="video/mp4">
 </video>
 
@@ -392,7 +441,7 @@ Volver al catálogo
 <div class="producto">
 
 <div class="galeria">
-<img src="imagenes/bang1.jpg" loading="lazy">
+<img src="imagenes/bang1.jpg">
 </div>
 
 <div class="producto-info">
@@ -405,7 +454,7 @@ Volver al catálogo
 Sistema innovador de doble sabor con boquilla giratoria para alternar entre sabores.
 </p>
 
-<video controls preload="metadata" playsinline>
+<video controls>
 <source src="videos/bang.mp4" type="video/mp4">
 </video>
 
@@ -432,8 +481,8 @@ Volver al catálogo
 <div class="producto">
 
 <div class="galeria">
-<img src="imagenes/pyne1.jpg" loading="lazy">
-<img src="imagenes/pyne2.jpg" loading="lazy">
+<img src="imagenes/pyne1.jpg">
+<img src="imagenes/pyne2.jpg">
 </div>
 
 <div class="producto-info">
@@ -446,7 +495,7 @@ Volver al catálogo
 Pantalla digital, lluvia de luces y modo turbo de doble potencia.
 </p>
 
-<video controls preload="metadata" playsinline>
+<video controls>
 <source src="videos/pynevideo.mp4" type="video/mp4">
 </video>
 
@@ -465,6 +514,7 @@ Volver al catálogo
 </div>
 
 </div>
+
 <!-- HUMO AZUL -->
 
 <div id="humo" class="detalle">
@@ -472,8 +522,8 @@ Volver al catálogo
 <div class="producto">
 
 <div class="galeria">
-<img src="imagenes/clase1.jpg" loading="lazy">
-<img src="imagenes/clase2.jpg" loading="lazy">
+<img src="imagenes/clase1.jpg">
+<img src="imagenes/clase2.jpg">
 </div>
 
 <div class="producto-info">
@@ -486,7 +536,7 @@ Volver al catálogo
 Diseño exclusivo tipo botella con gran capacidad y excelente producción de vapor.
 </p>
 
-<video controls preload="metadata" playsinline>
+<video controls>
 <source src="videos/clasevideo.mp4" type="video/mp4">
 </video>
 
@@ -513,7 +563,7 @@ Volver al catálogo
 <div class="producto">
 
 <div class="galeria">
-<img src="imagenes/mote1.jpg" loading="lazy">
+<img src="imagenes/mote1.jpg">
 </div>
 
 <div class="producto-info">
@@ -526,7 +576,7 @@ Volver al catálogo
 El Mote 25.000 Puffs cuenta con modo normal y modo turbo. Incluye pantalla digital para monitorear el nivel de líquido y batería, además de configuraciones de potencia ajustables para una experiencia personalizada.
 </p>
 
-<video controls preload="metadata" playsinline>
+<video controls>
 <source src="videos/motevideo.mp4" type="video/mp4">
 </video>
 
@@ -545,35 +595,29 @@ Volver al catálogo
 </div>
 
 </div>
-
 <script>
 
 function mostrar(id){
 
-document.getElementById("catalogo").style.display="none";
-document.querySelector(".categoria").style.display="none";
+document.getElementById("catalogo").style.display = "none";
+document.querySelector(".categoria").style.display = "none";
 
 document.querySelectorAll(".detalle").forEach(function(item){
-item.style.display="none";
+item.style.display = "none";
 });
 
-document.getElementById(id).style.display="block";
-
-window.scrollTo({
-top:0,
-behavior:"smooth"
-});
+document.getElementById(id).style.display = "block";
 
 }
 
 function volverCatalogo(){
 
 document.querySelectorAll(".detalle").forEach(function(item){
-item.style.display="none";
+item.style.display = "none";
 });
 
-document.getElementById("catalogo").style.display="block";
-document.querySelector(".categoria").style.display="block";
+document.getElementById("catalogo").style.display = "block";
+document.querySelector(".categoria").style.display = "block";
 
 window.scrollTo({
 top:0,
@@ -591,19 +635,16 @@ behavior:"smooth"
 <a href="https://www.instagram.com/vapestore_ctg?igsh=amtkYW14anduNmN1&utm_source=qr"
 class="instagram-fijo"
 target="_blank">
-
 <img src="imagenes/logoinsta.jpg" alt="Instagram">
-
 </a>
 
 <a href="https://wa.me/573019470749"
 class="whatsapp-fijo"
 target="_blank">
-
 <img src="imagenes/logowhat.jpg" alt="WhatsApp">
-
 </a>
 
 </body>
 </html>
+
 
