@@ -700,20 +700,20 @@ window.scrollTo({top:0, behavior:"smooth"});
   
 function volverCatalogo(){
 
-document.querySelectorAll(".detalle").forEach(function(item){
-item.style.display = "none";
+document.querySelectorAll(".detalle").forEach(el=>{
+  el.style.display = "none";
 });
 
 document.getElementById("catalogo").style.display = "block";
-document.querySelector(".categoria").style.display = "block";
+document.getElementById("destilados").style.display = "block";
 
-window.scrollTo({
-top:0,
-behavior:"smooth"
+document.querySelectorAll(".categoria").forEach(el=>{
+  el.style.display = "block";
 });
 
+window.scrollTo({top:0, behavior:"smooth"});
 }
-
+  
 </script>
 
 <footer>
