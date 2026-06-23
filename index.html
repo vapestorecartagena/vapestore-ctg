@@ -409,8 +409,8 @@ Selecciona un destilado para ver fotos, videos y comprar.
 
 </div>
 
-<div class="catalogo destilados">
-
+<div id="destilados" class="catalogo">
+  
 <div class="grid">
 
 <div class="card">
@@ -683,15 +683,21 @@ Volver al catálogo
 function mostrar(id){
 
 document.getElementById("catalogo").style.display = "none";
-document.querySelector(".categoria").style.display = "none";
+document.getElementById("destilados").style.display = "none";
 
-document.querySelectorAll(".detalle").forEach(function(item){
-item.style.display = "none";
+document.querySelectorAll(".categoria").forEach(el=>{
+  el.style.display = "none";
+});
+
+document.querySelectorAll(".detalle").forEach(el=>{
+  el.style.display = "none";
 });
 
 document.getElementById(id).style.display = "block";
-}
 
+window.scrollTo({top:0, behavior:"smooth"});
+}
+  
 function volverCatalogo(){
 
 document.querySelectorAll(".detalle").forEach(function(item){
