@@ -271,7 +271,7 @@ color:#c8d3e2;
 
 <body>
 
-<header>
+<header id="encabezado">
 
 <img src="imagenes/logo2.png" class="logo" alt="VapeStore CTG">
 
@@ -684,6 +684,7 @@ function mostrar(id){
 
 document.getElementById("catalogo").style.display = "none";
 document.getElementById("destilados").style.display = "none";
+document.getElementById("encabezado").style.display = "none";
 
 document.querySelectorAll(".categoria").forEach(el=>{
   el.style.display = "none";
@@ -706,12 +707,17 @@ document.querySelectorAll(".detalle").forEach(el=>{
 
 document.getElementById("catalogo").style.display = "block";
 document.getElementById("destilados").style.display = "block";
+document.getElementById("encabezado").style.display = "block";
 
 document.querySelectorAll(".categoria").forEach(el=>{
   el.style.display = "block";
 });
 
-window.scrollTo({top:0, behavior:"smooth"});
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
+
 }
   
 </script>
