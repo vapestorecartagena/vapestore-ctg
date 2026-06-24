@@ -91,11 +91,11 @@ background:white;
 color:#222;
 border-radius:25px;
 overflow:hidden;
-box-shadow:
-0 8px 25px rgba(0,0,0,.25),
-0 0 20px rgba(0,195,255,.6);
-border:2px solid rgba(0,195,255,.4);
+box-shadow:0 10px 30px rgba(0,0,0,.25);
 transition:.3s;
+display:flex;
+flex-direction:column;
+height:100%;
 }
 .card:hover{
 transform:translateY(-8px);
@@ -112,6 +112,10 @@ object-fit:cover;
   
 .info{
 padding:10px;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+flex:1;
 }
 .info h2{
 font-size:13px;
