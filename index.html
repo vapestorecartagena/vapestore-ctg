@@ -8,1410 +8,412 @@
 
 <title>VapeStore CTG</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-
-    background:
-    linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.58)),
-    url("imagenes/fondopagina.jpg");
-
-    background-size:cover;
-    background-position:center;
-    background-attachment:fixed;
-
-    color:#fff;
-
-}
-
-header{
-
-    background:
-    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
-    url("imagenes/fondopagina.jpg");
-
-    background-size:cover;
-    background-position:center;
-
-    padding:55px 20px 25px;
-
-    text-align:center;
-
-    border-radius:0 0 35px 35px;
-
-    box-shadow:
-    0 15px 40px rgba(0,0,0,.35);
-
-}
-
-.logo{
-
-    width:340px;
-    max-width:95%;
-    display:block;
-    margin:auto;
-
-    filter:
-    drop-shadow(0 0 25px rgba(0,195,255,.35));
-
-}
-
-.encabezado-info{
-
-    margin-top:10px;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:10px;
-
-    flex-wrap:wrap;
-
-}
-
-.encabezado-info span{
-
-    background:rgba(255,255,255,.10);
-
-    backdrop-filter:blur(8px);
-
-    padding:8px 14px;
-
-    border-radius:30px;
-
-    font-size:12px;
-
-    font-weight:600;
-
-    border:1px solid rgba(255,255,255,.15);
-
-}
-
-.categoria{
-
-    text-align:center;
-
-    padding:38px 18px 18px;
-
-}
-
-.categoria h1{
-
-    font-size:31px;
-
-    font-weight:800;
-
-    letter-spacing:1px;
-
-    color:#fff;
-
-    text-transform:uppercase;
-
-    text-shadow:
-
-    0 0 6px #fff,
-
-    0 0 18px #00c3ff;
-
-}
-
-.categoria p{
-
-    margin-top:8px;
-
-    color:#d8d8d8;
-
-    font-size:14px;
-
-}
-
-.catalogo{
-
-    max-width:1100px;
-
-    margin:auto;
-
-    padding:18px;
-
-}
-
-.grid{
-
-    display:grid;
-
-    grid-template-columns:repeat(2,1fr);
-
-    gap:15px;
-
-}
-
-.card{
-
-    position:relative;
-
-    background:linear-gradient(180deg,#ffffff,#f7f8fb);
-
-    color:#222;
-
-    border-radius:28px;
-
-    overflow:hidden;
-
-    display:flex;
-
-    flex-direction:column;
-
-    border:1px solid rgba(255,255,255,.30);
-
-    box-shadow:
-
-    0 12px 30px rgba(0,0,0,.18),
-
-    0 0 15px rgba(0,195,255,.18);
-
-    transition:.35s;
-
-    height:100%;
-
-}
-
-.card::before{
-
-    content:"";
-
-    position:absolute;
-
-    left:0;
-
-    top:0;
-
-    width:100%;
-
-    height:5px;
-
-    background:linear-gradient(90deg,#00c3ff,#00ff9d);
-
-}
-
-.card:hover{
-
-    transform:translateY(-6px);
-
-    box-shadow:
-
-    0 20px 45px rgba(0,0,0,.28),
-
-    0 0 22px rgba(0,195,255,.40);
-
-}
-
-.card:active{
-
-    transform:scale(.98);
-
-}
-
-.card img{
-
-    width:100%;
-
-    height:215px;
-
-    object-fit:cover;
-
-    transition:.4s;
-
-}
-
-.card:hover img{
-
-    transform:scale(1.05);
-
-}
-
-.info{
-
-    padding:14px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    flex:1;
-
-    justify-content:space-between;
-
-}
-
-.info h2{
-
-    font-size:15px;
-
-    text-align:center;
-
-    font-weight:700;
-
-    color:#111;
-
-    margin-bottom:8px;
-
-}
-
-.precio{
-
-    text-align:center;
-
-    font-size:24px;
-
-    font-weight:800;
-
-    color:#0ab34f;
-
-    margin-bottom:12px;
-
-}
-
-.ver-producto{
-
-    display:block;
-
-    text-decoration:none;
-
-    text-align:center;
-
-    padding:12px;
-
-    border-radius:15px;
-
-    background:linear-gradient(90deg,#00b4ff,#0077ff);
-
-    color:#fff;
-
-    font-weight:700;
-
-    transition:.30s;
-
-    box-shadow:
-
-    0 10px 18px rgba(0,119,255,.35);
-
-}
-
-.ver-producto:hover{
-
-    transform:translateY(-2px);
-
-}
-
-.ver-producto:active{
-
-    transform:scale(.97);
-
-}
-
-.badge-vendido,
-.badge-top{
-
-    position:absolute;
-
-    top:12px;
-
-    left:12px;
-
-    z-index:10;
-
-    padding:7px 14px;
-
-    border-radius:30px;
-
-    font-size:10px;
-
-    font-weight:700;
-
-    letter-spacing:.5px;
-
-    box-shadow:0 8px 20px rgba(0,0,0,.25);
-
-}
-
-.badge-vendido{
-
-    background:linear-gradient(90deg,#FFD700,#FFA000);
-
-    color:#111;
-
-}
-
-.badge-top{
-
-    background:linear-gradient(90deg,#00c3ff,#0066ff);
-
-    color:white;
-
-}
-
-.detalle{
-
-    display:none;
-
-    max-width:900px;
-
-    margin:auto;
-
-    padding:20px;
-
-    animation:fade .45s ease;
-
-}
-
-.producto{
-
-    background:white;
-
-    color:#222;
-
-    border-radius:30px;
-
-    overflow:hidden;
-
-    box-shadow:0 20px 45px rgba(0,0,0,.25);
-
-}
-
-.galeria{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    justify-content:center;
-
-    gap:15px;
-
-    padding:20px;
-
-}
-
-.galeria img{
-
-    width:45%;
-
-    max-width:320px;
-
-    border-radius:18px;
-
-    transition:.35s;
-
-}
-
-.galeria img:hover{
-
-    transform:scale(1.03);
-
-}
-
-.producto-info{
-
-    padding:25px;
-
-}
-
-.producto-info h1{
-
-    text-align:center;
-
-    font-size:30px;
-
-    margin-bottom:10px;
-
-}
-
-.producto-precio{
-
-    text-align:center;
-
-    font-size:34px;
-
-    font-weight:800;
-
-    color:#0ab34f;
-
-    margin-bottom:18px;
-
-}
-
-.producto-info p{
-
-    line-height:1.8;
-
-    color:#555;
-
-    margin-bottom:20px;
-
-}
-
-video{
-
-    display:block;
-
-    width:230px;
-
-    margin:25px auto;
-
-    border-radius:18px;
-
-    box-shadow:0 15px 35px rgba(0,0,0,.25);
-
-}
-
-.comprar{
-
-    display:block;
-
-    text-align:center;
-
-    text-decoration:none;
-
-    background:linear-gradient(90deg,#25D366,#18b955);
-
-    color:white;
-
-    padding:16px;
-
-    border-radius:16px;
-
-    font-size:16px;
-
-    font-weight:700;
-
-    margin-bottom:15px;
-
-    transition:.30s;
-
-}
-
-.comprar:hover{
-
-    transform:translateY(-2px);
-
-}
-
-.volver{
-
-    display:block;
-
-    text-align:center;
-
-    text-decoration:none;
-
-    background:#0d1d36;
-
-    color:white;
-
-    padding:16px;
-
-    border-radius:16px;
-
-    cursor:pointer;
-
-    transition:.30s;
-
-}
-
-.volver:hover{
-
-    background:#13284a;
-
-}
-
-.whatsapp-fijo,
-.instagram-fijo{
-
-    position:fixed;
-
-    right:15px;
-
-    width:56px;
-
-    height:56px;
-
-    border-radius:50%;
-
-    overflow:hidden;
-
-    z-index:9999;
-
-    animation:flotar 2.2s infinite;
-
-}
-
-.instagram-fijo{
-
-    bottom:92px;
-
-}
-
-.whatsapp-fijo{
-
-    bottom:20px;
-
-}
-
-.whatsapp-fijo img,
-.instagram-fijo img{
-
-    width:100%;
-
-    height:100%;
-
-    object-fit:cover;
-
-}
-
-footer{
-
-    text-align:center;
-
-    padding:30px;
-
-    color:#d6d6d6;
-
-    font-size:14px;
-
-}
-
-@keyframes flotar{
-
-    0%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
-    100%{transform:translateY(0);}
-
-}
-
-@keyframes fade{
-
-    from{
-
-        opacity:0;
-
-        transform:translateY(25px);
-
-    }
-
-    to{
-
-        opacity:1;
-
-        transform:translateY(0);
-
-    }
-
-}
-
-@media(max-width:480px){
-
-.logo{
-
-    width:300px;
-
-}
-
-.card img{
-
-    height:190px;
-
-}
-
-.info h2{
-
-    font-size:14px;
-
-}
-
-.precio{
-
-    font-size:20px;
-
-}
-
-.producto-info h1{
-
-    font-size:24px;
-
-}
-
-.producto-precio{
-
-    font-size:30px;
-
-}
-
-.galeria img{
-
-    width:100%;
-
-}
-
-video{
-
-    width:200px;
-
-}
-
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
-  <body>
+<body>
 
-<header id="encabezado">
+<!-- =========================
+HEADER
+========================= -->
 
-    <img src="imagenes/logo2.png" class="logo" alt="VapeStore CTG">
+<header class="hero">
 
-    <div class="encabezado-info">
+<div class="hero-overlay"></div>
 
-        <span>📍 Cartagena</span>
+<img src="imagenes/logo2.png" class="logo" alt="VapeStore CTG">
 
-        <span>🚚 Entrega rápida</span>
+<h1>VapeStore CTG</h1>
 
-        <span>💳 Pago contra entrega</span>
+<p class="subtitulo">
+Los mejores Vapes Premium de Cartagena
+</p>
 
-        <span>✅ Productos originales</span>
+<div class="beneficios">
 
-    </div>
+<div class="beneficio">
+🚚
+<span>Entrega rápida</span>
+</div>
+
+<div class="beneficio">
+💵
+<span>Pago contra entrega</span>
+</div>
+
+<div class="beneficio">
+✅
+<span>100% Originales</span>
+</div>
+
+</div>
 
 </header>
 
-<div class="categoria">
+<!-- =========================
+PRODUCTOS DESTACADOS
+========================= -->
 
-    <h1>VAPES CON NICOTINA</h1>
+<section class="destacados">
 
-    <p>
-        Encuentra tu vape favorito y compra en segundos por WhatsApp.
-    </p>
+<div class="titulo">
 
-</div>
-
-<div id="catalogo" class="catalogo">
-
-<div class="grid">
-
-<!-- =======================
-HOOKALIT
-======================= -->
-
-<div class="card">
-
-    <div class="badge-vendido">
-
-        🔥 MÁS VENDIDO
-
-    </div>
-
-    <img src="imagenes/olit1.jpg" alt="Hookalit">
-
-    <div class="info">
-
-        <h2>
-
-            Hookalit 35.000 Puffs
-
-        </h2>
-
-        <div class="precio">
-
-            $40.000
-
-        </div>
-
-        <a class="ver-producto"
-
-        onclick="mostrar('hookalit')">
-
-            Ver producto
-
-        </a>
-
-    </div>
+🔥 Productos Destacados
 
 </div>
 
-<!-- =======================
-BANG
-======================= -->
+<div class="slider">
 
-<div class="card">
+<!-- Hookalit -->
 
-    <div class="badge-top">
+<div class="slide">
 
-        ⭐ DOBLE SABOR
+<div class="etiqueta amarillo">
 
-    </div>
-
-    <img src="imagenes/bang1.jpg" alt="Bang Leader">
-
-    <div class="info">
-
-        <h2>
-
-            Bang Leader 32.000 Puffs
-
-        </h2>
-
-        <div class="precio">
-
-            $50.000
-
-        </div>
-
-        <a class="ver-producto"
-
-        onclick="mostrar('bang')">
-
-            Ver producto
-
-        </a>
-
-    </div>
+⭐ MÁS VENDIDO
 
 </div>
-
-<!-- =======================
-PYNE POD
-======================= -->
-
-<div class="card">
-
-    <img src="imagenes/pyne1.jpg" alt="Pyne Pod">
-
-    <div class="info">
-
-        <h2>
-            Pyne Pod 20.000 Puffs
-        </h2>
-
-        <div class="precio">
-            $35.000
-        </div>
-
-        <a class="ver-producto"
-        onclick="mostrar('pyne')">
-
-            Ver producto
-
-        </a>
-
-    </div>
-
-</div>
-
-<!-- =======================
-HUMO AZUL
-======================= -->
-
-<div class="card">
-
-    <img src="imagenes/clase1.jpg" alt="Humo Azul">
-
-    <div class="info">
-
-        <h2>
-            Humo Azul 24.000 Puffs
-        </h2>
-
-        <div class="precio">
-            $45.000
-        </div>
-
-        <a class="ver-producto"
-        onclick="mostrar('humo')">
-
-            Ver producto
-
-        </a>
-
-    </div>
-
-</div>
-
-<!-- =======================
-MOTE
-======================= -->
-
-<div class="card">
-
-    <img src="imagenes/mote1.jpg" alt="Mote">
-
-    <div class="info">
-
-        <div class="badge-top">
-
-            ⭐ NUEVO
-
-        </div>
-
-        <h2>
-            Mote 25.000 Puffs
-        </h2>
-
-        <div class="precio">
-            $35.000
-        </div>
-
-        <a class="ver-producto"
-        onclick="mostrar('mote')">
-
-            Ver producto
-
-        </a>
-
-    </div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- =======================
-DESTILADOS
-======================= -->
-
-<div class="categoria">
-
-    <h1>DESTILADOS</h1>
-
-    <p>
-        Productos disponibles para entrega inmediata.
-    </p>
-
-</div>
-
-<div id="destilados" class="catalogo">
-
-<div class="grid">
-
-<div class="card">
-
-    <div class="badge-vendido">
-
-        🔥 DESTACADO
-
-    </div>
-
-    <img src="imagenes/fume1.jpg" alt="Fume 2ml">
-
-    <div class="info">
-
-        <h2>
-            Fume 2 ml
-        </h2>
-
-        <div class="precio">
-            $65.000
-        </div>
-
-        <a class="ver-producto"
-        onclick="mostrar('fume')">
-
-            Ver producto
-
-        </a>
-
-    </div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- ==========================
-HOOKALIT
-========================== -->
-
-<div id="hookalit" class="detalle">
-
-<div class="producto">
-
-<div class="galeria">
 
 <img src="imagenes/olit1.jpg">
 
-<img src="imagenes/olit2.jpg">
+<div class="contenido">
 
-</div>
+<h2>Hookalit</h2>
 
-<div class="producto-info">
+<p>35.000 Puffs</p>
 
-<h1>Hookalit 35.000 Puffs</h1>
+<h3>$40.000</h3>
 
-<div class="producto-precio">
+<button onclick="mostrar('hookalit')">
 
-$40.000
+Ver producto
 
-</div>
-
-<p>
-
-🔥 Hasta 35.000 Puffs<br>
-🍓 Gran variedad de sabores<br>
-💨 Vapor abundante<br>
-🔋 Excelente duración<br>
-✅ Producto original
-
-</p>
-
-<video controls preload="metadata">
-
-<source src="videos/olit.mp4" type="video/mp4">
-
-</video>
-
-<a class="comprar"
-
-href="https://wa.me/573019470749?text=Hola,%20estoy%20interesado%20en%20el%20Hookalit%2035.000%20Puffs.%20%C2%BFQu%C3%A9%20sabores%20hay%20disponibles?"
-
-target="_blank">
-
-Comprar por WhatsApp
-
-</a>
-
-<a class="volver"
-
-onclick="volverCatalogo()">
-
-Volver al catálogo
-
-</a>
+</button>
 
 </div>
 
 </div>
 
+<!-- Bang -->
+
+<div class="slide">
+
+<div class="etiqueta azul">
+
+🔄 DOBLE SABOR
+
 </div>
-
-
-<!-- ==========================
-BANG LEADER
-========================== -->
-
-<div id="bang" class="detalle">
-
-<div class="producto">
-
-<div class="galeria">
 
 <img src="imagenes/bang1.jpg">
 
+<div class="contenido">
+
+<h2>Bang Leader</h2>
+
+<p>32.000 Puffs</p>
+
+<h3>$50.000</h3>
+
+<button onclick="mostrar('bang')">
+
+Ver producto
+
+</button>
+
 </div>
 
-<div class="producto-info">
+</div>
 
-<h1>Bang Leader 32.000 Puffs</h1>
+<!-- Pyne -->
 
-<div class="producto-precio">
+<div class="slide">
 
-$50.000
+<img src="imagenes/pyne1.jpg">
+
+<div class="contenido">
+
+<h2>Pyne Pod</h2>
+
+<p>20.000 Puffs</p>
+
+<h3>$35.000</h3>
+
+<button onclick="mostrar('pyne')">
+
+Ver producto
+
+</button>
 
 </div>
 
-<p>
+</div>
 
-⭐ Sistema de doble sabor<br>
-🔄 Gira la boquilla y cambia de sabor<br>
-💨 Excelente producción de vapor<br>
-🔋 Gran autonomía<br>
-✅ Producto original
+</div>
 
-</p>
+<div class="dots">
 
-<video controls preload="metadata">
+<span class="active"></span>
+<span></span>
+<span></span>
 
-<source src="videos/bang.mp4" type="video/mp4">
+</div>
 
-</video>
+</section>
 
-<a class="comprar"
+<!-- =========================
+CATÁLOGO
+========================= -->
 
-href="https://wa.me/573019470749?text=Hola,%20estoy%20interesado%20en%20el%20Bang%20Leader%2032.000%20Puffs"
+<section class="catalogo">
 
+<div class="titulo">
+
+🔥 Todos los Vapes
+
+</div>
+
+<div class="grid">
+</div> <!-- cierre de grid -->
+
+</section>
+
+<!-- =========================
+PRODUCTOS (CATÁLOGO)
+========================= -->
+
+<div class="grid">
+
+<!-- HOOKALIT -->
+<div class="card">
+<img src="imagenes/olit1.jpg">
+<div class="card-info">
+<h2>Hookalit 35.000 Puffs</h2>
+<p>$40.000</p>
+<button onclick="mostrar('hookalit')">Ver producto</button>
+</div>
+</div>
+
+<!-- BANG -->
+<div class="card">
+<img src="imagenes/bang1.jpg">
+<div class="card-info">
+<h2>Bang Leader 32.000 Puffs</h2>
+<p>$50.000</p>
+<button onclick="mostrar('bang')">Ver producto</button>
+</div>
+</div>
+
+<!-- PYNE -->
+<div class="card">
+<img src="imagenes/pyne1.jpg">
+<div class="card-info">
+<h2>Pyne Pod 20.000 Puffs</h2>
+<p>$35.000</p>
+<button onclick="mostrar('pyne')">Ver producto</button>
+</div>
+</div>
+
+<!-- HUMO AZUL -->
+<div class="card">
+<img src="imagenes/clase1.jpg">
+<div class="card-info">
+<h2>Humo Azul 24.000 Puffs</h2>
+<p>$45.000</p>
+<button onclick="mostrar('humo')">Ver producto</button>
+</div>
+</div>
+
+<!-- MOTE -->
+<div class="card">
+<img src="imagenes/mote1.jpg">
+<div class="card-info">
+<h2>Mote 25.000 Puffs</h2>
+<p>$35.000</p>
+<button onclick="mostrar('mote')">Ver producto</button>
+</div>
+</div>
+
+<!-- FUME -->
+<div class="card">
+<img src="imagenes/fume1.jpg">
+<div class="card-info">
+<h2>Fume 2ml</h2>
+<p>$65.000</p>
+<button onclick="mostrar('fume')">Ver producto</button>
+</div>
+</div>
+
+</div> <!-- fin grid -->
+
+</section>
+<!-- =========================
+DETALLES PRODUCTOS
+========================= -->
+
+<div id="hookalit" class="detalle">
+
+<h1>Hookalit 35.000 Puffs</h1>
+<img src="imagenes/olit1.jpg">
+<img src="imagenes/olit2.jpg">
+
+<p>El Hookalit es un vape desechable de alto rendimiento con excelente sabor y duración.</p>
+
+<h2>$40.000</h2>
+
+<a class="whatsapp"
+href="https://wa.me/573019470749?text=Estoy%20interesado%20en%20Hookalit"
 target="_blank">
-
 Comprar por WhatsApp
-
 </a>
 
-<a class="volver"
+<button onclick="volver()">Volver</button>
 
-onclick="volverCatalogo()">
+</div>
 
-Volver al catálogo
+<!-- BANG -->
 
+<div id="bang" class="detalle">
+
+<h1>Bang Leader</h1>
+<img src="imagenes/bang1.jpg">
+
+<p>Vape de doble sabor con boquilla giratoria.</p>
+
+<h2>$50.000</h2>
+
+<a class="whatsapp"
+href="https://wa.me/573019470749?text=Estoy%20interesado%20en%20Bang%20Leader"
+target="_blank">
+Comprar por WhatsApp
 </a>
 
-</div>
+<button onclick="volver()">Volver</button>
 
 </div>
 
-</div>
-
-<!-- ==========================
-PYNE POD
-========================== -->
+<!-- PYNE -->
 
 <div id="pyne" class="detalle">
 
-<div class="producto">
-
-<div class="galeria">
-
+<h1>Pyne Pod</h1>
 <img src="imagenes/pyne1.jpg">
-<img src="imagenes/pyne2.jpg">
 
-</div>
+<p>Dispositivo con pantalla digital y modo turbo.</p>
 
-<div class="producto-info">
+<h2>$35.000</h2>
 
-<h1>Pyne Pod 20.000 Puffs</h1>
-
-<div class="producto-precio">
-
-$35.000
-
-</div>
-
-<p>
-
-⚡ 20.000 Puffs<br>
-📺 Pantalla digital<br>
-🚀 Modo Turbo<br>
-🔋 Indicador de batería<br>
-💨 Excelente producción de vapor
-
-</p>
-
-<video controls preload="metadata">
-
-<source src="videos/pynevideo.mp4" type="video/mp4">
-
-</video>
-
-<a class="comprar"
-href="https://wa.me/573019470749?text=Hola,%20estoy%20interesado%20en%20el%20Pyne%20Pod%2020.000%20Puffs."
+<a class="whatsapp"
+href="https://wa.me/573019470749?text=Estoy%20interesado%20en%20Pyne%20Pod"
 target="_blank">
-
 Comprar por WhatsApp
-
 </a>
 
-<a class="volver"
-onclick="volverCatalogo()">
-
-Volver al catálogo
-
-</a>
+<button onclick="volver()">Volver</button>
 
 </div>
 
-</div>
-
-</div>
-
-<!-- ==========================
-HUMO AZUL
-========================== -->
+<!-- HUMO AZUL -->
 
 <div id="humo" class="detalle">
 
-<div class="producto">
-
-<div class="galeria">
-
+<h1>Humo Azul</h1>
 <img src="imagenes/clase1.jpg">
-<img src="imagenes/clase2.jpg">
 
-</div>
+<p>Gran producción de vapor y diseño tipo botella.</p>
 
-<div class="producto-info">
+<h2>$45.000</h2>
 
-<h1>Humo Azul 24.000 Puffs</h1>
-
-<div class="producto-precio">
-
-$45.000
-
-</div>
-
-<p>
-
-🍾 Diseño exclusivo tipo botella<br>
-💨 24.000 Puffs<br>
-🍓 Gran variedad de sabores<br>
-🔋 Excelente duración<br>
-✅ Producto original
-
-</p>
-
-<video controls preload="metadata">
-
-<source src="videos/clasevideo.mp4" type="video/mp4">
-
-</video>
-
-<a class="comprar"
-href="https://wa.me/573019470749?text=Hola,%20estoy%20interesado%20en%20el%20Humo%20Azul%2024.000%20Puffs."
+<a class="whatsapp"
+href="https://wa.me/573019470749?text=Estoy%20interesado%20en%20Humo%20Azul"
 target="_blank">
-
 Comprar por WhatsApp
-
 </a>
 
-<a class="volver"
-onclick="volverCatalogo()">
-
-Volver al catálogo
-
-</a>
+<button onclick="volver()">Volver</button>
 
 </div>
 
-</div>
-
-</div>
-
-<!-- ==========================
-MOTE
-========================== -->
+<!-- MOTE -->
 
 <div id="mote" class="detalle">
 
-<div class="producto">
-
-<div class="galeria">
-
+<h1>Mote</h1>
 <img src="imagenes/mote1.jpg">
 
-</div>
+<p>Modo normal y turbo con pantalla digital.</p>
 
-<div class="producto-info">
+<h2>$35.000</h2>
 
-<h1>Mote 25.000 Puffs</h1>
-
-<div class="producto-precio">
-
-$35.000
-
-</div>
-
-<p>
-
-⚡ Modo Normal y Turbo<br>
-📺 Pantalla digital<br>
-🔋 Indicador de batería y líquido<br>
-💨 Potencia ajustable<br>
-✅ Producto original
-
-</p>
-
-<video controls preload="metadata">
-
-<source src="videos/motevideo.mp4" type="video/mp4">
-
-</video>
-
-<a class="comprar"
-href="https://wa.me/573019470749?text=Hola,%20estoy%20interesado%20en%20el%20Mote%2025.000%20Puffs."
+<a class="whatsapp"
+href="https://wa.me/573019470749?text=Estoy%20interesado%20en%20Mote"
 target="_blank">
-
 Comprar por WhatsApp
-
 </a>
 
-<a class="volver"
-onclick="volverCatalogo()">
-
-Volver al catálogo
-
-</a>
+<button onclick="volver()">Volver</button>
 
 </div>
 
-</div>
-
-</div>
-
-<!-- ==========================
-FUME 2 ML
-========================== -->
+<!-- FUME -->
 
 <div id="fume" class="detalle">
 
-    <div class="producto">
+<h1>Fume 2ml</h1>
+<img src="imagenes/fume1.jpg">
 
-        <div class="galeria">
+<p>Disponible en Cartagena para entrega inmediata.</p>
 
-            <img src="imagenes/fume1.jpg">
+<h2>$65.000</h2>
 
-        </div>
+<a class="whatsapp"
+href="https://wa.me/573019470749?text=Estoy%20interesado%20en%20Fume%202ml"
+target="_blank">
+Comprar por WhatsApp
+</a>
 
-        <div class="producto-info">
-
-            <h1>Fume 2 ml</h1>
-
-            <div class="producto-precio">
-
-                $65.000
-
-            </div>
-
-            <p>
-
-                💎 Destilado Premium<br>
-                🌿 2 ml<br>
-                🚚 Entrega inmediata en Cartagena<br>
-                ✅ Producto original
-
-            </p>
-
-            <video controls preload="metadata">
-
-                <source src="videos/fumevideo.mp4" type="video/mp4">
-
-            </video>
-
-            <a class="comprar"
-
-            href="https://wa.me/573019470749?text=Hola,%20estoy%20interesado%20en%20el%20Fume%202ml."
-
-            target="_blank">
-
-                Comprar por WhatsApp
-
-            </a>
-
-            <a class="volver"
-
-            onclick="volverCatalogo()">
-
-                Volver al catálogo
-
-            </a>
-
-        </div>
-
-    </div>
+<button onclick="volver()">Volver</button>
 
 </div>
+
+<!-- =========================
+SCRIPT
+========================= -->
 
 <script>
 
 function mostrar(id){
 
-    document.getElementById("catalogo").style.display="none";
-    document.getElementById("destilados").style.display="none";
-    document.getElementById("encabezado").style.display="none";
+document.querySelectorAll(".grid, .destacados").forEach(el=>{
+el.style.display="none";
+});
 
-    document.querySelectorAll(".categoria").forEach(function(c){
+document.getElementById(id).style.display="block";
 
-        c.style.display="none";
-
-    });
-
-    document.querySelectorAll(".detalle").forEach(function(d){
-
-        d.style.display="none";
-
-    });
-
-    document.getElementById(id).style.display="block";
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
+window.scrollTo({top:0, behavior:"smooth"});
 
 }
 
-function volverCatalogo(){
+function volver(){
 
-    document.querySelectorAll(".detalle").forEach(function(d){
+document.querySelectorAll(".detalle").forEach(el=>{
+el.style.display="none";
+});
 
-        d.style.display="none";
+document.querySelector(".grid").style.display="grid";
+document.querySelector(".destacados").style.display="block";
 
-    });
-
-    document.getElementById("catalogo").style.display="block";
-    document.getElementById("destilados").style.display="block";
-    document.getElementById("encabezado").style.display="block";
-
-    document.querySelectorAll(".categoria").forEach(function(c){
-
-        c.style.display="block";
-
-    });
-
-    window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
-    });
+window.scrollTo({top:0, behavior:"smooth"});
 
 }
 
 </script>
 
-<footer>
-
-© 2026 VapeStore CTG<br>
-
-Cartagena • Colombia
-
-</footer>
-
-<a href="https://www.instagram.com/vapestore_ctg"
-
-class="instagram-fijo"
-
-target="_blank">
-
-<img src="imagenes/logoinsta.jpg" alt="Instagram">
-
-</a>
-
-<a href="https://wa.me/573019470749"
-
-class="whatsapp-fijo"
-
-target="_blank">
-
-<img src="imagenes/logowhat.jpg" alt="WhatsApp">
-
-</a>
-
 </body>
-
 </html>
 
