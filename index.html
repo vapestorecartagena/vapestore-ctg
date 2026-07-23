@@ -228,11 +228,10 @@ header{
 .card img{
 
     width:100%;
-
-    height:215px;
-
-    object-fit:cover;
-
+    height:300px;          /* antes 215px */
+    object-fit:contain;    /* para que el vape se vea completo */
+    padding:10px;
+    background:#fff;
     transition:.4s;
 
 }
@@ -245,7 +244,7 @@ header{
 
 .info{
 
-    padding:14px;
+    
 
     display:flex;
 
@@ -751,7 +750,7 @@ footer{
 
 .card img{
 
-    height:190px;
+    height:260px;
 
 }
 
