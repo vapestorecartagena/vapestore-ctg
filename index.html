@@ -26,27 +26,34 @@ html{
 body{
 
     background:
-    radial-gradient(circle at top,
-    #1b3b60 0%,
-    #10284a 35%,
-    #081524 70%,
-    #040b14 100%);
+    linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.58)),
+    url("imagenes/fondopagina.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
 
     color:#fff;
-
-    min-height:100vh;
 
 }
 
 header{
 
-    background:transparent;
+    background:
+    linear-gradient(rgba(0,0,0,.35),rgba(0,0,0,.35)),
+    url("imagenes/fondopagina.jpg");
 
-    padding:25px 20px 5px;
+    background-size:cover;
+    background-position:center;
+
+    padding:55px 20px 25px;
 
     text-align:center;
 
-    box-shadow:none;
+    border-radius:0 0 35px 35px;
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.35);
 
 }
 
@@ -59,24 +66,6 @@ header{
 
     filter:
     drop-shadow(0 0 25px rgba(0,195,255,.35));
-
-}
-
-.subtitulo{
-
-    margin-top:-45px;
-
-    margin-bottom:0;
-
-    color:#d6dce5;
-
-    font-size:16px;
-
-    font-weight:500;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
 
 }
 
@@ -116,7 +105,7 @@ header{
 
     text-align:center;
 
-    padding:8px 18px 18px;
+    padding:38px 18px 18px;
 
 }
 
@@ -598,18 +587,13 @@ TARJETA DE FIDELIDAD
 ==========================*/
 
 .promo-fidelidad{
-
     max-width:1100px;
-
-    margin:90px auto 50px;
-
+    margin:20px auto 30px;
     padding:0 18px;
-
 }
 
 .promo-titulo{
     text-align:center;
-    margin-top:40px;
     margin-bottom:20px;
 }
 
@@ -819,9 +803,17 @@ video{
 
     <img src="imagenes/logo2.png" class="logo" alt="VapeStore CTG">
 
-    <p class="subtitulo">
-        Productos Premium • Cartagena
-    </p>
+    <div class="encabezado-info">
+
+        <span>📍 Cartagena</span>
+
+        <span>🚚 Entrega rápida</span>
+
+        <span>💳 Pago contra entrega</span>
+
+        <span>✅ Productos originales</span>
+
+    </div>
 
 </header>
 
